@@ -1,6 +1,6 @@
 {
-  "name": "artportfolio",
   "homepage": "https://cdinhart.web.app/",
+  "name": "artportfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

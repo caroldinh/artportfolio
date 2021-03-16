@@ -45,8 +45,8 @@ body{
 
 p{
   color:white;
-  align-self: left !important;
-  text-align: left !important;
+  align-self: left;
+  text-align: left;
 }
 
 .sidebar{
@@ -58,12 +58,18 @@ p{
   align-items:left;
   align-content: left;
   margin-left:30%;
+  display:inline-table;
 }
 
-img{
+.cover{
   width: 100%;
   height: 100%;
   object-fit:cover;
+}
+
+.expanded{
+  width: 100%;
+  height: auto;
 }
 
 .image{
@@ -110,20 +116,94 @@ a:hover{
   left: 90%;
   z-index:1000;
   width:fit-content;
-  font-size:3em;
+  font-size:2vw;
+  color:white;
   cursor:auto;
+  opacity:1;
+  transition:0.3s;
 }
 
 .close:hover{
   cursor:pointer;
+  opacity:0.5;
 }
 
 .footer{
-  height:10%;
+  margin-top:10vw;
+  width: 100%;
+  float:center !important;
+  align-self: center !important;
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.footertext{
+  margin-left:auto;
+  margin-right:auto;
+  width:fit-content !important;
+  text-align:center !important;
+  float: center !important;
+  align-self: center !important;
+  align-items: center !important;
 }
 
 .center{
   position: absolute;
   top: 90%;
   left: 50%;
+}
+
+.img-title{
+  width: 35vw;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.img-description{
+  width: 35vw;
+  text-align: justify !important;
+}
+
+.navlink{
+  float: left;
+  cursor:auto;
+}
+
+.navlink:hover{
+  cursor:pointer;
+}
+
+.selected{
+  font-weight: bold;
+  color: white !important;
+}
+
+.badge{
+  margin-top: 2vw !important;
+  display: flex !important;
+}
+
+@media only screen and (hover: none) and (pointer: coarse){
+
+  .image{
+    width:max(17vw, 120px);
+  }
+
+  .image-wide{
+    width:max(35vw, 100%);
+  }
+
+  .close{
+    font-size:5vw !important;
+  }
+
+  .img-description{
+    width: 100% !important;
+  }
+
+  .img-title{
+    width: 100% !important;
+  }
+  
 }

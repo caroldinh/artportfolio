@@ -166,8 +166,9 @@ a:hover{
 }
 
 .navlink{
-  float: left;
   cursor:auto;
+  display: block;
+  clear:both;
 }
 
 .navlink:hover{
@@ -188,10 +189,12 @@ a:hover{
 
   .image{
     width: 100% !important;
+    transition: 0.3s !important;
   }
 
   .image-wide{
     width:100% !important;
+    transition: 0.3s !important;
   }
 
   .close{
@@ -204,6 +207,44 @@ a:hover{
 
   .img-title{
     width: 100% !important;
+  }
+
+  .sidebar{
+    position: relative;
+    width: 100%;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    align-content: center !important;
+    text-align: center !important;
+  }
+
+  .sidebar p{
+    float: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .navlink{
+    display: block !important;
+    float: center !important;
+    margin: auto !important;
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+    align-self: center !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .gallery{
+    margin-top: 10%;
+    width: 100% !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
   }
 
 } 

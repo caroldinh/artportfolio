@@ -63,10 +63,10 @@ class App extends React.Component{
           <p>caroline dinh</p>
           <p>mediums: acrylic / watercolor / digital</p>
           <p>tools: krita, heavypaint, huion</p>
-          <a className={this.state.digital} onClick={this.digital}>Digital Art</a><br></br>
-          <a className={this.state.painting} onClick={this.painting}>Painting</a><br></br>
-          <a className={this.state.design} onClick={this.design}>Graphic Design</a><br></br>
-          <a className={this.state.commissions} onClick={this.commission}>Commission Me</a><br></br>
+          <a className={this.state.digital} onClick={this.digital}>Digital Art</a>
+          <a className={this.state.painting} onClick={this.painting}>Painting</a>
+          <a className={this.state.design} onClick={this.design}>Graphic Design</a>
+          <a className={this.state.commissions} onClick={this.commission}>Commission Me</a>
         </div>
         <Gallery page={this.state.page}></Gallery>
         <Footer></Footer>

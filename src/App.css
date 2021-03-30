@@ -184,14 +184,14 @@ a:hover{
   display: flex !important;
 }
 
-@media only screen and (hover: none) and (pointer: coarse){
+@media (max-width:700px) { 
 
   .image{
-    width:max(17vw, 120px);
+    width: 100% !important;
   }
 
   .image-wide{
-    width:max(35vw, 100%);
+    width:100% !important;
   }
 
   .close{
@@ -205,5 +205,5 @@ a:hover{
   .img-title{
     width: 100% !important;
   }
-  
-}
+
+} 

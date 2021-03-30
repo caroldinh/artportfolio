@@ -83,7 +83,7 @@ class Gallery extends React.Component {
   render(){
     if(this.props.page == "DigitalArt"){
       return (
-        <div className="gallery">
+        <div className="gallery" id="digitalart">
           <Image source="images/swing.jpg" title="Swing"
               description="Painted in Krita and featured in Paper Crane Journal's inaugural issue 
               <a href='https://en.calameo.com/books/006629503d10b805aa97b' target='_blank'>here.</a>">
@@ -139,7 +139,7 @@ class Gallery extends React.Component {
         <div className="gallery">
           <p>I am currently not taking digital or traditional art commissions.</p>
           <p>Graphic design commissions are currently <strong>open</strong>. Pricing is $15 for simple designs of up to 4 colors (+$2 per additional color).</p>
-          <p>Payment accepted via PayPal first half upfront, second half before sending unwatermarked final product.</p>
+          <p>Payment accepted via PayPal.</p>
           <p>Contact me via email (ctdinh443[at]gmail[dot]com) for more information.</p>
         </div>
       );

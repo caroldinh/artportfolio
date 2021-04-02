@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  scroll-behavior: smooth;
 }
 
 .App-logo {
@@ -47,6 +48,10 @@ p{
   color:white;
   align-self: left;
   text-align: left;
+}
+
+h1{
+  color: white;
 }
 
 .sidebar{
@@ -123,6 +128,10 @@ a:hover{
   transition:0.3s;
 }
 
+.image-wide .close-light{
+  color: black !important;
+}
+
 .close:hover{
   cursor:pointer;
   opacity:0.5;
@@ -184,6 +193,21 @@ a:hover{
   margin-top: 2vw !important;
   display: flex !important;
 }
+
+.img-static{
+  width: 60%;
+  display:block;
+  margin:auto;
+  float: center !important;
+  text-align: center !important;
+}
+
+li{
+  margin: 0;
+  padding: 0;
+}
+
+/**********************************************************************************************************************/
 
 @media (max-width:700px) { 
 

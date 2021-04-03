@@ -52,6 +52,8 @@ p{
 
 h1{
   color: white;
+  text-decoration-color: white !important;
+  text-decoration: none !important;
 }
 
 .sidebar{
@@ -231,6 +233,13 @@ li{
 
   .img-title{
     width: 100% !important;
+  }
+
+  .gallery h1{
+    float: center !important;
+    margin: auto;
+    align-self: center;
+    text-align: center;
   }
 
   .sidebar{

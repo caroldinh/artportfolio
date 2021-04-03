@@ -20,7 +20,7 @@ class App extends React.Component{
         <Router>
         <div className="sidebar">
 
-          <h1>Caroline Dinh</h1>
+          <Link to="/"><h1>Caroline Dinh</h1></Link>
           <p>mediums: acrylic / watercolor / digital</p>
           <p>tools: krita, heavypaint, huion</p>
           
@@ -50,7 +50,7 @@ class App extends React.Component{
             <Commissions />
           </Route>
           <Route path="/">
-            <Painting /><DigitalArt /><GraphicDesign/>
+            <Best/>
           </Route>
         </Switch>
         </div>
@@ -64,6 +64,37 @@ class App extends React.Component{
       </div>
     )
   }
+}
+
+function Best(){
+  return(
+  <div key="best">
+    <Image source="images/swing.jpg" title="Swing"
+          description="Painted in Krita and featured in Paper Crane Journal's inaugural issue 
+          <a href='https://en.calameo.com/books/006629503d10b805aa97b' target='_blank'>here.</a>">
+      </Image>
+      <Image source="images/html2.png"
+        description="Logo for Reinvented Magazine's Invent with Reinvented HTML workshop."></Image>
+     <Image source="images/conditions.JPG" title="Pre-Existing Conditions"
+      description="Acrylic on canvas (18 x 24 in.). Forthcoming in the Montpelier Artists on the Rise juried exhibition (2021)."></Image>
+    <Image source="images/electricityandwater.jpg" title="Electricity & Water Don't Mix"
+      description="Painted with watercolor with touches of ink and oil pastel. This piece was submitted as part of my AP 
+      Studio Art: 2D Design portfolio and appeared in the first issue of The Agapanthus Collective <a href='https://www.agapanthuscollective.com/biannual-issue-1/' 
+      target='_blank'>here.</a>"></Image>
+      <Image source="images/machinelearning.png"
+        description="Logo for Reinvented Magazine's Intro to Machine Learning workshop."></Image>
+        <Image source="images/chien_shiung_wu.jpeg" title="Chien-Shiung Wu"
+      description="Watercolor on watercolor paper (17 x 11 in.). This piece depicts Chinese American nuclear physicist Chien-Shiung Wu."></Image>
+      <Image source="images/picnic.png"
+        description="Icon for an art critique app."></Image>
+        <Image source="images/concert_mistress.JPG" title="Concert Mistress"
+      description="Oil on canvas board (12 x 15 in.). This piece was featured on the cover of The Wondrous Real magazine's <a href='https://www.wondrousrealmag.com/issue-2'
+      target='_blank'>second issue.</a>"></Image>
+    <Image source="images/careergirls.JPG" title="Career Girls"
+      description="Acrylic on canvas (24 x 18 in.). This piece was featured on the cover of Southchild Lit's first issue, <a href='https://southchildlit.wixsite.com/website-2'
+      target='_blank'>GLITCH IN THE SYSTEM.</a>"></Image>
+  </div>
+  );
 }
 
 function Painting(){
@@ -111,19 +142,19 @@ function DigitalArt(){
 function GraphicDesign(){
   return(
     <div key="design">
+       <Image source="images/votelulu.jpg"
+        description="Flyer for a student election campaign."></Image>
       <Image source="images/reinventathon.png"
         description="Logo for Reinvented Magazine's Reinvent-a-thon."></Image>
-      <Image source="images/run.jpg" light="true"
-        description="Graphic for student newspaper article."></Image>
       <Image source="images/html2.png"
         description="Logo for Reinvented Magazine's Invent with Reinvented HTML workshop."></Image>
-      <Image source="images/electoral_college.jpg" light="true"
-        description="Graphic for student newspaper article."></Image>
       <Image source="images/machinelearning.png"
         description="Logo for Reinvented Magazine's Intro to Machine Learning workshop."></Image>
-      <Image source="images/family.jpg" light="true"
-        description="Graphic for student newspaper article."></Image>
+      <Image source="images/picnic.png"
+        description="Icon for an art critique app."></Image>
       <Image source="images/rockets.png"
+       description="Graphic for Reinvented Magazine."></Image>
+       <Image source="images/open_source.png"
        description="Graphic for Reinvented Magazine."></Image>
        <Image source="images/computer.png"
        description="Graphic for Reinvented Magazine."></Image>

@@ -1,58 +1,40 @@
+
+[data-theme="dark"]{
+  --background-color: black;
+  --text-color: white;
+  --link-color: cyan;
+}
+
+[data-theme="light"] {
+  --background-color: white;
+  --text-color: black;
+  --link-color: LightSeaGreen;
+}
+
+
 .App {
   text-align: center;
   scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 body{
-  background-color: black !important;
+  background-color: var(--background-color);
   font-family: Arial, Helvetica, sans-serif;
   padding:10vw;
+  color: var(--text-color);
 }
 
 p{
-  color:white;
   align-self: left;
   text-align: left;
 }
 
+a{
+  color: var(--link-color);
+  text-decoration:none;
+}
+
 h1{
-  color: white;
-  text-decoration-color: white !important;
   text-decoration: none !important;
 }
 
@@ -72,6 +54,12 @@ h1{
   width: 100%;
   height: 100%;
   object-fit:cover;
+  opacity: 1;
+}
+
+.fadeIn{
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .expanded{
@@ -108,10 +96,7 @@ h1{
   float:left;
 }
 
-a{
-  color:cyan;
-  text-decoration:none;
-}
+
 
 a:hover{
   text-decoration: underline;
@@ -128,6 +113,7 @@ a:hover{
   cursor:auto;
   opacity:1;
   transition:0.3s;
+  filter: drop-shadow(0 0 2px black);
 }
 
 .image-wide .close-light{
@@ -186,11 +172,6 @@ a:hover{
   cursor:pointer;
 }
 
-.selected{
-  font-weight: bold;
-  color: white !important;
-}
-
 .badge{
   margin-top: 2vw !important;
   display: flex !important;
@@ -207,6 +188,71 @@ a:hover{
 li{
   margin: 0;
   padding: 0;
+  line-height: 2em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border: 1px solid var(--link-color)
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  top: 3px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--text-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--link-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px  var(--link-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /**********************************************************************************************************************/

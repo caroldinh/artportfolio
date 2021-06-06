@@ -19,9 +19,9 @@ class App extends React.Component{
         <Router>
         <div className="sidebar">
 
-        <Link to="/"><img src="images/pfp.jpg" class="profile"></img></Link>
+        <Link to="/"><img src="images/pfp.jpg" className="profile"></img></Link>
 
-          <Link to="/"><h1>CDINHART</h1></Link>
+          <Link to="/"><h1>@cdinhart</h1></Link>
           
           
             <Link className="navlink" to="/painting">Painting</Link>
@@ -31,7 +31,7 @@ class App extends React.Component{
             <Link className="navlink" to="/writing">Writing</Link>
             <a href="https://cdinhcomms.carrd.co/" target="_blank" className="navlink">Commissions</a>
 
-            <div className="social" id="instagram"></div>
+            <Toggle></Toggle>
                     
         </div>
 
@@ -62,18 +62,16 @@ class App extends React.Component{
             <h1>Writing</h1>
             <Writing />
           </Route>
+          <Route path="/design-notes">
+            <h1>Design Notes</h1>
+            <DesignNotes />
+          </Route>
           <Route path="/">
             <Home/>
             
           </Route>
         </Switch>
         </div>
-        
-
-        <Footer></Footer>
-
-        
-
         </Router>
       </div>
     )
@@ -83,11 +81,12 @@ class App extends React.Component{
 function Home(){
   return(
   <div>
-        <p>Hi there! Call me C (she/they). I make art.</p>
+        <p>Hey there! Call me C (she/they). I make art.</p>
         <p>I'm chiefly a <Link className="pink" to="/digital">digital artist,</Link> though I have some experience with <Link className="pink" to="/painting">painting</Link> and <Link className="pink" to="/graphic-design">graphic design.</Link></p>
         <p>Digital art and graphic design <a href="https://cdinhcomms.carrd.co" target="_blank" className="pink">commissions</a> are currently open.</p>
         <p>I also <Link className="blue" to="/writing">write.</Link> You can find some of my poetry and prose online.</p>
-        <p>Find me on <a href="https://instagram.com/cdinhart" target="_blank">Instagram</a> and <a href="https://twitter.com/cdinhart" target="_blank">Twitter</a> @cdinhart.</p>
+        <p>Find me on <a href="https://instagram.com/cdinhart" target="_blank">Instagram</a>, <a href="https://twitter.com/cdinhart" target="_blank">Twitter</a>, and <a href="https://artfol.me/cdinhart" target="_blank">Artfol</a> @cdinhart.</p>
+        <p><Link className="pink" to="/design-notes">Design Notes</Link></p>
   </div>
   );
 }
@@ -196,7 +195,7 @@ function Writing(){
   return(
       <table width="100%">
         <tr>
-          <th width="20%"><p class="pink">Prose</p></th>
+          <th width="20%"><p className="pink">Prose</p></th>
           <th width="80%">
             <Pub link="https://www.ampleremains.com/01carolinedinh.html" title="Doppelgänger" press="Ample Remains"></Pub>
             <Pub link="https://www.polluxjournal.com/issue-1/c-t-dinh" title="Parallel // Structure" press="Pollux Journal"></Pub>
@@ -206,7 +205,7 @@ function Writing(){
         </tr>
         
         <tr>
-          <th width="20%"><p class="pink">Poetry</p></th>
+          <th width="20%"><p className="pink">Poetry</p></th>
             <th width="80%">
               <Pub link="https://www.indigoliteraryjournal.com/caroline-dinh" title="Overlay / Interview with an Olympian" press="Indigo Literary Journal"></Pub>
               <Pub link="http://strangehorizons.com/poetry/city-girls/" title="city girls" press="Strange Horizons"></Pub>
@@ -216,6 +215,18 @@ function Writing(){
         </tr>
       </table>
     )
+}
+
+function DesignNotes(){
+  return(
+    <div>
+      <p>Site built in React & deployed with Firebase Hosting. Set in DM Sans.</p>
+      
+      <p>Theme icons made by <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
+
+      <Carbonbadge className="badge" darkMode={document.documentElement.getAttribute("data-theme") === "dark"} />
+    </div>
+  )
 }
 
 class Pub extends React.Component{
@@ -314,48 +325,51 @@ class Image extends React.Component{
   }
 }
 
-class Footer extends React.Component{
+class Toggle extends React.Component{
 
   constructor(props){
     super(props);
     this.changeTheme = this.changeTheme.bind(this);
     this.state = {
       dark: true,
-      icon: "images/sun.svg",
-      iconclass: "sun",
+      icon: "images/moon.svg",
+      iconclass: "theme-icon moon",
     };
   }
 
   changeTheme(){
     if(document.documentElement.getAttribute("data-theme") === "dark"){
       document.documentElement.setAttribute("data-theme", "light");
+      let wcb = document.getElementById("wcb");
+      if(wcb != null){
+        wcb.className = "wcb carbonbadge";
+      }
       this.setState({
         dark: false,
-        icon: "images/moon.svg",
-        iconclass: "moon",
+        icon: "images/sun.svg",
+        iconclass: "theme-icon sun",
       });
     }
     else{
       document.documentElement.setAttribute("data-theme", "dark");
+      let wcb = document.getElementById("wcb");
+      if(wcb != null){
+        wcb.className = "wcb carbonbadge wcb-d";
+      }
       this.setState({
         dark: true,
-        icon: "images/sun.svg",
-        iconclass: "sun",
+        icon: "images/moon.svg",
+        iconclass: "theme-icon moon",
       });
     }
   }
 
   render(){
     return(
-        <div className="footer">
-
-          <p className="footertext">site built with react.js & deployed with firebase hosting.</p>
-          <Carbonbadge className="badge" darkMode={document.documentElement.getAttribute("data-theme") === "dark"} />
-          <label className="switch" onChange={this.changeTheme}>
-                <input type="checkbox"/>
-                <span className="slider round"><img class={this.state.iconclass} src={this.state.icon}></img></span>
-              </label>
-        </div>
+      <label className="switch" onChange={this.changeTheme}>
+        <input type="checkbox"/>
+        <span className="slider round"><img className={this.state.iconclass} src={this.state.icon}></img></span>
+    </label>
     );
   }
 }

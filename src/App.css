@@ -1,14 +1,16 @@
 
 [data-theme="dark"]{
-  --background-color: black;
-  --text-color: white;
-  --link-color: cyan;
+  --background-color: #000000;
+  --text-color: #cccccc;
+  --link-color: #07d6d3;
+  --accent-warm: #ed1099;
 }
 
 [data-theme="light"] {
-  --background-color: white;
-  --text-color: black;
-  --link-color: LightSeaGreen;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #02869d;
+  --accent-warm: #bb3ba5;
 }
 
 
@@ -27,20 +29,39 @@ body{
 p{
   align-self: left;
   text-align: left;
+  line-height: 1.5em;
+  font-size: 1.3em;
 }
 
 a{
   color: var(--link-color);
-  text-decoration:none;
+  text-decoration:none !important;
+  transition: 0.3s;
+}
+
+a:hover{
+  opacity: 0.7 !important;
+}
+
+.profile{
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
 }
 
 h1{
   text-decoration: none !important;
+  transition: 0.3s;
+}
+
+h1:hover{
+  opacity: 0.7 !important;
 }
 
 .sidebar{
   position: fixed;
   width: 20%;
+  text-decoration: none !important;
 }
 
 .gallery{
@@ -48,6 +69,12 @@ h1{
   align-content: left;
   margin-left:30%;
   display:inline-table;
+  width: 70%;
+}
+
+th{
+  font-weight: normal;
+  vertical-align: top;
 }
 
 .cover{
@@ -136,6 +163,7 @@ a:hover{
 }
 
 .footertext{
+  font-size: 1em !important;
   margin-left:auto;
   margin-right:auto;
   width:fit-content !important;
@@ -157,6 +185,14 @@ a:hover{
   font-weight: bold;
 }
 
+.pink{
+  color: var(--accent-warm);
+}
+
+.blue{
+  color: var(--link-color);
+}
+
 .img-description{
   width: 35vw;
   text-align: justify !important;
@@ -166,10 +202,15 @@ a:hover{
   cursor:auto;
   display: block;
   clear:both;
+  line-height: 1.5em;
+  font-size: 1.3em;
+  color: var(--text-color);
+  text-decoration: none !important;
 }
 
 .navlink:hover{
   cursor:pointer;
+  color: var(--accent-warm);
 }
 
 .badge{
@@ -189,6 +230,34 @@ li{
   margin: 0;
   padding: 0;
   line-height: 2em;
+}
+
+.moon{
+  position: relative;
+  display: inline-block;
+  width: auto;
+  top: 6px;
+  left: -13px;
+  height: 20px;
+  color: var(--text-color);
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */     
+}
+
+.sun{
+  position: relative;
+  display: inline-block;
+  width: auto;
+  top: 6px;
+  left: 13px;
+  height: 20px;
+  color: var(--text-color);
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
 }
 
 .switch {
@@ -216,7 +285,7 @@ li{
   background-color: var(--background-color);
   -webkit-transition: .4s;
   transition: .4s;
-  border: 1px solid var(--link-color)
+  border: 1px solid var(--link-color);
 }
 
 .slider:before {
@@ -253,6 +322,25 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.social{
+  width: 5vh;
+  fill: white !important;
+  margin-top: 2vh;
+}
+
+.social:hover{
+  fill: var(--link-color);
+}
+
+#instagram{
+  /*background-image: url(instagram.svg);*/
+}
+
+.col{
+  width: 60%;
+  text-align: justify !important;
 }
 
 /**********************************************************************************************************************/
@@ -305,18 +393,22 @@ input:checked + .slider:before {
     text-align: center !important;
     align-items: center !important;
     justify-content: center !important;
+    
   }
 
   .navlink{
-    display: block !important;
+    display: inline-block !important;
     float: center !important;
-    margin: auto !important;
-    padding-left: 2% !important;
-    padding-right: 2% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
     align-self: center !important;
     text-align: center !important;
     align-items: center !important;
     justify-content: center !important;
+    border: 0.5px solid var(--text-color);
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 15px !important;
   }
 
   .gallery{
@@ -324,6 +416,10 @@ input:checked + .slider:before {
     width: 100% !important;
     margin-left: 0% !important;
     margin-right: 0% !important;
+  }
+
+  .col{
+    width: 100% !important;
   }
 
 } 

@@ -31,7 +31,7 @@ body{
 
 p{
   align-self: left;
-  text-align: left;
+  text-align: justify;
   line-height: 1.5em;
   font-size: 1.3em;
 }
@@ -111,7 +111,25 @@ th{
   float: left;
 }
 
+.imagesmall{
+  width: 12.5vw;
+  height: 12.5vw;
+  margin-left:1vw;
+  margin-bottom:1vw;
+  overflow: hidden;
+  transition: 0.3s;
+  display:inline-block;
+  align-items:left;
+  align-self:left;
+  float: left;
+}
+
 .image:hover{
+  filter: brightness(0.4);
+  cursor:pointer;
+}
+
+.imagesmall:hover{
   filter: brightness(0.4);
   cursor:pointer;
 }
@@ -127,7 +145,23 @@ th{
   float:left;
 }
 
+.big-button{
+  width: 100%;
+  padding: 2%;
+  background-color: var(--link-color);
+  color:var(--background-color);
+  text-align: center;
+  transition: 0.3s;
+  border: none;
+  border-radius: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5em;
+}
 
+.big-button:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
 
 a:hover{
   text-decoration: underline;
@@ -135,7 +169,7 @@ a:hover{
 
 .image-wide .close{
   position: absolute;
-  top: 5%;
+  top: 20px;
   left: 90%;
   z-index:1000;
   width:fit-content;
@@ -197,6 +231,10 @@ a:hover{
   color: var(--link-color);
 }
 
+.small{
+  font-size: 1em;
+}
+
 .img-description{
   width: 35vw;
   text-align: justify !important;
@@ -222,18 +260,30 @@ a:hover{
   display: flex !important;
 }
 
-.img-static{
-  width: 60%;
-  display:block;
-  margin:auto;
-  float: center !important;
-  text-align: center !important;
-}
-
 li{
   margin: 0;
   padding: 0;
   line-height: 2em;
+}
+
+.price-chart{
+  border: 1px none var(--text-color);
+  border-radius: 20px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.price-chart th{
+  border-bottom: 0.5px ridge var(--link-color);
+  padding: 2%;
+}
+
+.price-chart .lastrow{
+  border-bottom: 0px none !important;
+}
+
+th {
+  padding-right: 5%;
 }
 
 .theme-icon{
@@ -350,6 +400,11 @@ input:checked + .slider:before {
 @media (max-width:700px) { 
 
   .image{
+    width: 100% !important;
+    transition: 0.3s !important;
+  }
+
+  .imagesmall{
     width: 100% !important;
     transition: 0.3s !important;
   }

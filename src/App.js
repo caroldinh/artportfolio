@@ -69,6 +69,9 @@ class App extends React.Component{
             <h1>Pricing</h1>
             <Pricing />
           </Route>
+          <Route path="/links">
+            <Links />
+          </Route>
           <Route path="/">
             <Home/>
             
@@ -289,21 +292,21 @@ function Commissions(){
     <div>
     <table width="100%">
         <tr>
-          <th width="20%"><p className="pink">What I Do</p></th>
+          <th width="20%"><p className="pink left">What I Do</p></th>
           <th width="80%">
-            <p>Characters, friends, family, pets, fanart, book covers, logos, graphic designs—I'd be down to tackle most things as long as you give me enough info and provide references as necessary.</p>
+            <p>Characters, friends, family, pets, fanart, etc.—I'd be down to tackle most things as long as you give me enough info and provide references as necessary.</p>
           </th>
         </tr>
 
         <tr>
-          <th width="20%"><p className="pink">What I Don't Do</p></th>
+          <th width="20%"><p className="pink left">What I Don't Do</p></th>
           <th width="80%">
             <p> NSFW, bigoted requests, problematic pairings, anything that makes me uncomfortable. I have the right to ignore and/or turn down commissions at my discretion.</p>
           </th>
         </tr>
         
         <tr>
-          <th width="20%"><p className="pink">How It Works</p></th>
+          <th width="20%"><p className="pink left">How It Works</p></th>
             <th width="80%">
               <p>1. <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSdSty2FrfdMvsH8_n-2TmTlhi562ousWMfxUl4Jtr3uPK6oxQ/viewform" target="_blank">Fill out my commission order form (preferred)</a></strong> or DM me on social media with the commission details. The form should take between 5-10 minutes to complete depending on the complexity of the project; 2-3 minutes if you have reference photos.</p>
               <p>2. I will reach out to you within a week so we can discuss the commission further.</p>
@@ -313,7 +316,7 @@ function Commissions(){
         </tr>
 
         <tr>
-          <th width="20%"><p className="pink">Payment</p></th>
+          <th width="20%"><p className="pink left">Payment</p></th>
             <th width="80%">
               <p>I take payments in PayPal. For a detailed overview of pricing, click <Link to="/pricing">here.</Link> All prices are in USD.</p>
             </th>
@@ -323,6 +326,9 @@ function Commissions(){
       <br></br><br></br><br></br>
       <h1>Pricing & Examples</h1>
       <Pricing />
+      <br></br><br></br><br></br>
+      <h1>Terms of Service</h1>
+      <TOS />
       <br></br><br></br><br></br>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSty2FrfdMvsH8_n-2TmTlhi562ousWMfxUl4Jtr3uPK6oxQ/viewform" target="_blank"><button class="big-button">COMMISSION ME</button></a>
       </div>
@@ -334,7 +340,7 @@ function Pricing(){
     <div>
   <table width="100%">
   <tr>
-    <th width="20%"><p className="pink">Single Humanoid Character ($5-40+)</p></th>
+    <th width="20%"><p className="pink left">Single Humanoid Character ($5-40+)</p></th>
       <th width="80%">
         <table width="100%" className="price-chart">
           <tr>
@@ -372,7 +378,7 @@ function Pricing(){
       </th>
   </tr>
   <tr>
-    <th width="20%"><p className="pink">Spotify Screenshot Portraits ($26)</p></th>
+    <th width="20%"><p className="pink left">Spotify Screenshot Portraits ($26)</p></th>
     <th width="80%">
       <p>Give me a character and a song they would vibe to and I will draw them. (Or give me a character and their vibes and I will pick a song for them to vibe to, if you're fine with a 90% chance of my assigning them a rock song.)</p>
       <ImageSmall source="images/spotify/loki.jpeg"></ImageSmall>
@@ -381,22 +387,55 @@ function Pricing(){
     </th>
   </tr>
   <tr>
-    <th width="20%"><p className="pink">Backgrounds</p></th>
+    <th width="20%"><p className="pink left">Backgrounds</p></th>
     <th width="80%">
       <p>Single-colored backgrounds come for free. Backgrounds can range from $3-$20+ depending on complexity.</p>
     </th>
   </tr>
-  <tr>
-    <th width="20%"><p className="pink">Logos / Designs ($15+)</p></th>
-    <th width="80%">
-      <p>Logos start at $15 and may vary depending on complexity. You will receive the logo in PNG format and a color palette with hex codes for reference.</p>
-      <ImageSmall source="images/backslash.svg"></ImageSmall>
-       <ImageSmall source="images/umd_transparent.svg"></ImageSmall>
-       <ImageSmall source="images/html1.jpg"></ImageSmall>
-    </th>
-  </tr>
 </table>
 </div>
+  );
+}
+
+function TOS(){
+  return(
+    <div>
+      <table>
+        <tr>
+          <th width="20%"><p className="pink left">Terms of Service</p></th>
+          <th width="80%">
+            <p>By commissioning me, you accept the following terms of service:</p>
+            <p>1. Commissioned work is for personal (non-commercial) use only.</p>
+            <p>2. I reserve the right to turn down any commission.</p>
+            <p>3. I retain all rights to my artwork.</p>
+            <p>4. I am free to post, share, and/or add your commissioned work to my portfolio unless otherwise requested.</p>
+            <p>5. You must credit me (cdinhart) where my art is displayed. Do not steal, trace, or claim my work as your own.</p>
+          </th>
+        </tr>
+      </table>
+    </div>
+  );
+}
+
+function Designs(){
+  <tr>
+  <th width="20%"><p className="pink left">Logos / Designs ($15+)</p></th>
+  <th width="80%">
+    <p>Logos start at $15 and may vary depending on complexity. You will receive the logo in PNG format and a color palette with hex codes for reference.</p>
+    <ImageSmall source="images/backslash.svg"></ImageSmall>
+     <ImageSmall source="images/umd_transparent.svg"></ImageSmall>
+     <ImageSmall source="images/html1.jpg"></ImageSmall>
+  </th>
+</tr>
+}
+
+function Links(){
+  return(
+    <div>
+      <a href="https://cdinhart.gumroad.com/l/popculturewiki" target="_blank"><button class="big-button">POETRY BOOK</button></a>
+      <a href="https://instagram.com/cdinhart" target="_blank"><button class="big-button">INSTAGRAM</button></a>
+      <a href="https://artfol.me/cdinhart" target="_blank"><button class="big-button">ARTFOL</button></a>
+    </div>
   );
 }
 

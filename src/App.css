@@ -1,30 +1,50 @@
+:root{
+  --heading-font: 'Fuzzy Bubbles', cursive;
+  --subheading-font: 'Raleway', sans-serif;
+  --body-font: 'Helvetica', 'Arial', sans-serif;
+}
 
 [data-theme="dark"]{
-  --background-color: #000000;
+  --background-color: #101014;
   --opposite-color: #ffffff;
   --text-color: #cccccc;
-  --link-color: #07d6d3;
-  --accent-warm: #ed1099;
+  --link-color: #2be4d4;
+  --accent-warm: #e36e40;
+  --planet-brightness: 0.7;
 }
 
 [data-theme="light"] {
   --background-color: #ffffff;
   --opposite-color: #000000;
   --text-color: #333333;
-  --link-color: #02869d;
-  --accent-warm: #bb3ba5;
+  --link-color: #1e7f8b;
+  --accent-warm: #df4430;
+  --planet-brightness: 1.3;
 }
 
+[planet-size="large"]{
+  --planet-height: 100vh;
+}
+
+[planet-size="small"]{
+  --planet-height:50vh;
+}
 
 .App {
   text-align: center;
   scroll-behavior: smooth;
 }
 
+html{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 body{
   background-color: var(--background-color);
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--body-font);
+  font-weight: 400;
+  /*font-family: 'DM Sans', sans-serif;*/
   padding:10vw;
   color: var(--text-color);
 }
@@ -33,7 +53,7 @@ p{
   align-self: left;
   text-align: justify;
   line-height: 1.5em;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 a{
@@ -47,7 +67,7 @@ a:hover{
 }
 
 .profile{
-  width: 20vh;
+  width: 15vh;
   height: auto;
   border-radius: 50%;
 }
@@ -55,10 +75,45 @@ a:hover{
 h1{
   text-decoration: none !important;
   transition: 0.3s;
+  font-family: var(--heading-font);
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.emoji{
+  font-size: 0.75em;
 }
 
 h1:hover{
   opacity: 0.7 !important;
+}
+
+h2{
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.titan-bottom{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: var(--planet-height);
+  z-index: -10000;
+  transition: 0.5s;
+  opacity: 1;
+  filter: brightness(var(--planet-brightness));
+}
+
+.titan-top{
+  position: fixed;
+  top: 10vh;
+  left: 10vh;
+  width: 40vw;
+  z-index: -10000;
+  transition: 0.5s;
+  opacity: 0.6;
+  filter: brightness(var(--planet-brightness));
 }
 
 .sidebar{
@@ -158,8 +213,8 @@ th{
   transition: 0.3s;
   border: none;
   border-radius: 20px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.5em;
+  font-family: var(--heading-font);
+  font-size: 2em;
   margin-bottom: 3%;
 }
 
@@ -237,7 +292,7 @@ a:hover{
 }
 
 .small{
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .img-description{
@@ -249,15 +304,26 @@ a:hover{
   cursor:auto;
   display: block;
   clear:both;
-  line-height: 1.5em;
-  font-size: 1.3em;
-  color: var(--text-color);
+  line-height: 1.7em;
+  font-size: 1em;
+  color: var(--background-color);
   text-decoration: none !important;
+  font-family: var(--subheading-font);
+  font-weight: 600;
+  background-color: var(--accent-warm);
+  border-radius: 20px;
+  border: 0px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width:fit-content;
+  opacity: 1;
 }
 
 .navlink:hover{
   cursor:pointer;
-  color: var(--accent-warm);
+  background-color: var(--link-color);
+  opacity: 1;
 }
 
 .badge{
@@ -317,7 +383,7 @@ th {
 }
 
 .switch {
-  margin-top: 2vh;
+  margin-top: 5vh;
   position: relative;
   display: block;
   width: 60px;
@@ -408,6 +474,21 @@ input:checked + .slider:before {
 
 @media (max-width:1000px) { 
 
+  .titan-bottom{
+    display: none;
+  }
+  
+  .titan-top{
+    position: fixed;
+    top: -50vh;
+    left: -45vw;
+    width: 300vh;
+    z-index: -10000;
+    transition: 0.5s;
+    opacity: 0.6;
+    filter: brightness(var(--planet-brightness));
+  }
+
   .image{
     width: 100% !important;
     transition: 0.3s !important;
@@ -472,16 +553,18 @@ input:checked + .slider:before {
     text-align: center !important;
     align-items: center !important;
     justify-content: center !important;
-    border: 0.5px solid var(--text-color);
+    border: 0px solid var(--text-color);
     padding: 5px;
     border-radius: 10px;
     margin-bottom: 15px !important;
     margin-right: 2px !important;
     margin-left: 2px !important;
+    opacity: 100% !important;
   }
 
   .navlink:hover{
-    border: 0.5px solid var(--accent-warm);
+    border: 0px;
+    opacity: 100% !important;
   }
 
   .gallery{

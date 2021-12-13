@@ -19,9 +19,7 @@ class App extends React.Component{
         <Router>
         <div className="sidebar">
 
-        <Link to="/"><img src="images/pfp.jpg" className="profile"></img></Link>
-
-          <Link to="/"><h1>@cdinhart</h1></Link>
+          <Link to="/"><h1>• CAROL DINH • </h1></Link>
       
             <Link className="navlink" to="/digital">Digital Art</Link>
             <Link className="navlink" to="/painting">Painting</Link>
@@ -79,25 +77,33 @@ class App extends React.Component{
         </Switch>
         </div>
         </Router>
+
+        <img class="titan-bottom" src="images/titan-bottom.svg"></img>
+        <img class="titan-top" src="images/titan-top.svg"></img>
+
       </div>
     )
   }
 }
 
 function Home(){
+  document.documentElement.setAttribute("planet-size", "large");
   return(
   <div>
-        <p>Hey there! Call me C (she/they). I make art.</p>
-        <p>I'm chiefly a <Link className="pink" to="/digital">digital artist,</Link> though I have some experience with <Link className="pink" to="/painting">painting</Link> and <Link className="pink" to="/graphic-design">graphic design.</Link></p>
-        <p>Digital art and graphic design <Link className="pink" to="/commissions">commissions</Link> are currently open.</p>
-        <p>I also <Link className="blue" to="/writing">write.</Link> You can find some of my poetry and prose online.</p>
-        <p>Find me on <a href="https://instagram.com/cdinhart" target="_blank">Instagram</a> and <a href="https://artfol.me/cdinhart" target="_blank">Artfol</a> @cdinhart.</p>
-        <p><Link className="pink" to="/design-notes">Design Notes</Link></p>
+      <h1>About me</h1>
+        <p>Hey there! My name is Carol. I make art.</p>
+        <p>I'm chiefly a <Link className="pink" to="/digital"><strong>digital artist,</strong></Link> though I have some experience with <Link className="pink" to="/painting"><strong>painting</strong></Link> and <Link className="pink" to="/graphic-design"><strong>graphic design.</strong></Link></p>
+        <p>Digital art and graphic design <Link className="pink" to="/commissions"><strong>commissions</strong></Link> are currently open.</p>
+        <p>I also <Link className="blue" to="/writing"><strong>write.</strong></Link> You can find some of my poetry and prose online.</p>
+        <p>Find me on <a href="https://instagram.com/cdinhart" target="_blank"><strong>Instagram</strong></a> and <a href="https://artfol.me/cdinhart" target="_blank"><strong>Artfol</strong></a> @cdinhart.</p>
+        <br></br>
+        <h1><Link to="/design-notes">Design Notes</Link></h1>
   </div>
   );
 }
 
 function Painting(){
+  document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="painting">
     <Image source="images/conditions.JPG" 
@@ -124,11 +130,14 @@ function Painting(){
       <img className="expanded" src="images/venice.jpg" alt="A gondolier crosses a row of buildings in a Venetian canal."></img>
     </Image>
     <Image source="images/ops.jpg" title="Ops" description="Oil on canvas board (11 x 15 in.). Featured on the cover of Blue Marble Review's Summer 2021 issue. Check it out <a href='https://bluemarblereview.com/ops/' target='_blank'>here</a>." alt="Portrait of a woman in a space suit, white star designs circling her helmet like a planet's rings against a pink, purple, and gold background."></Image>
+
   </div>
+  
   );
 }
 
 function DigitalArt(){
+  document.documentElement.setAttribute("planet-size", "small");
   return (
     <div key="digitalart">
       <Image source="images/swing.jpg" 
@@ -180,31 +189,22 @@ function DigitalArt(){
 }
 
 function GraphicDesign(){
+  document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="design">
-      <Image source="images/reinventathon.jpg"
-        description="Logo for Reinvented Magazine's Reinvent-a-thon."></Image>
-      <Image source="images/html1.jpg"
-        description="Logo for Reinvented Magazine's Invent with Reinvented HTML workshop."
-        alt="Logo for Reinvented Magazine's HTML workshop. On the right, a browser window displays a wepbage with a pink and blue wave pattern and the text 
-        '<div class='html'>'. A box with the HTML tag symbol '</>' overlaps it. To the side are two warped net patterns."></Image>
-      <Image source="images/backslash.svg"
-      description="Logo for <a href='https://backslashlit.com/' target='_blank'>Backslash Lit</a>">
-        <img className="expanded" src="images/backslash_icon.svg"></img>
+      <Image source="images/backslash_brand_kit.jpg"
+      description="Graphics and branding kit for <a href='https://backslashlit.com/' target='_blank'>Backslash Lit</a>.">
       </Image>
-      <Image source="images/rockets.jpg"
-       description="Graphic for Reinvented Magazine."></Image>
-       <Image source="images/open_source.jpg"
-       description="Graphic for Reinvented Magazine."></Image>
-       <Image source="images/computer.jpg"
-       description="Graphic for Reinvented Magazine."></Image>
        <Image source="images/umd_transparent.svg"
        description="Entry for UMD '25 discord server logo contest."></Image>
+       <Image source="images/dcc_design_poster.jpg">
+      </Image>
     </div>
   );
 }
 
 function Media(){
+  document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="media"> 
       
@@ -223,10 +223,11 @@ function Media(){
 }
 
 function Writing(){
+  document.documentElement.setAttribute("planet-size", "small");
   return(
       <table width="100%">
         <tr>
-          <th width="20%"><p className="pink">Prose</p></th>
+          <th width="20%"><h2 className="pink">Prose</h2></th>
           <th width="80%">
             <Pub link="https://flashpointsf.com/2021/04/09/deploy/" title="DEPLOY" press="Flash Point SF"></Pub>
             <Pub link="https://www.ampleremains.com/01ctdinh.html" title="Doppelgänger" press="Ample Remains"></Pub>
@@ -236,7 +237,7 @@ function Writing(){
         </tr>
         
         <tr>
-          <th width="20%"><p className="pink">Poetry</p></th>
+          <th width="20%"><h2 className="pink">Poetry</h2></th>
             <th width="80%">
               <Pub link="https://journaloferato.squarespace.com/issue-two" title="ROCK YOU / Champions" press="journal of erato"></Pub>
               <Pub link="https://issuu.com/paracosmliteraryjournal/docs/issue_01_metamorphosis__4_" title="In There / Alter Egos / Superpower" press="Paracosm Lit"></Pub>
@@ -249,7 +250,7 @@ function Writing(){
         </tr>
 
         <tr>
-          <th width="20%"><p className="pink">Books</p></th>
+          <th width="20%"><h2 className="pink">Books</h2></th>
             <th width="80%">
               <Pub link="https://cdinhart.gumroad.com/l/popculturewiki" title="The All-Devouring Pop Culture Wiki" press="2021"></Pub>
             </th>
@@ -259,12 +260,15 @@ function Writing(){
 }
 
 function DesignNotes(){
+  document.documentElement.setAttribute("planet-size", "large");
   return(
     <div>
-      <p>Site built in React & deployed with Firebase Hosting. Set in DM Sans.</p>
+      <p>Site built in React & deployed with Firebase Hosting. Headings set in Fuzzy Bubbles; subheadings and body set in Raleway.</p>
       
       <p>Theme icons made by <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
 
+      <p class="small">This site has a carbon footprint, as all digital activity does. The below estimate counts only this page ("DESIGN NOTES"): the true carbon footprint will be larger because images require more processing power to load. My including this estimate here is not to deter you from web browsing but rather to raise awareness—click on the badge to learn more about your digital carbon footprint.</p>
+      
       <Carbonbadge className="badge" darkMode={document.documentElement.getAttribute("data-theme") === "dark"} />
     </div>
   )
@@ -277,36 +281,37 @@ class Pub extends React.Component{
   render(){
     if(this.props.press){
       return(
-            <p><a href={this.props.link} target="_blank">{this.props.title}</a> ({this.props.press})</p>
+            <p><a href={this.props.link} target="_blank"><strong>{this.props.title}</strong></a> ({this.props.press})</p>
         )
     } else{
       return(
-        <p><a href={this.props.link} target="_blank">{this.props.title}</a></p>
+        <p><a href={this.props.link} target="_blank"><strong>{this.props.title}</strong></a></p>
     )
     }
   }
 }
 
 function Commissions(){
+  document.documentElement.setAttribute("planet-size", "small");
   return(
     <div>
     <table width="100%">
         <tr>
-          <th width="20%"><p className="pink left">What I Do</p></th>
+          <th width="20%"><h2 className="pink left">What I Do</h2></th>
           <th width="80%">
             <p>Characters, friends, family, pets, fanart, etc.—I'd be down to tackle most things as long as you give me enough info and provide references as necessary.</p>
           </th>
         </tr>
 
         <tr>
-          <th width="20%"><p className="pink left">What I Don't Do</p></th>
+          <th width="20%"><h2 className="pink left">What I Don't Do</h2></th>
           <th width="80%">
             <p> NSFW, bigoted requests, problematic pairings, anything that makes me uncomfortable. I have the right to ignore and/or turn down commissions at my discretion.</p>
           </th>
         </tr>
         
         <tr>
-          <th width="20%"><p className="pink left">How It Works</p></th>
+          <th width="20%"><h2 className="pink left">How It Works</h2></th>
             <th width="80%">
               <p>1. <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSdSty2FrfdMvsH8_n-2TmTlhi562ousWMfxUl4Jtr3uPK6oxQ/viewform" target="_blank">Fill out my commission order form (preferred)</a></strong> or DM me on social media with the commission details. The form should take between 5-10 minutes to complete depending on the complexity of the project; 2-3 minutes if you have reference photos.</p>
               <p>2. I will reach out to you within a week so we can discuss the commission further.</p>
@@ -316,7 +321,7 @@ function Commissions(){
         </tr>
 
         <tr>
-          <th width="20%"><p className="pink left">Payment</p></th>
+          <th width="20%"><h2 className="pink left">Payment</h2></th>
             <th width="80%">
               <p>I take payments in PayPal. For a detailed overview of pricing, click <Link to="/pricing">here.</Link> All prices are in USD.</p>
             </th>
@@ -330,7 +335,7 @@ function Commissions(){
       <h1>Terms of Service</h1>
       <TOS />
       <br></br><br></br><br></br>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSty2FrfdMvsH8_n-2TmTlhi562ousWMfxUl4Jtr3uPK6oxQ/viewform" target="_blank"><button class="big-button">COMMISSION ME</button></a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSty2FrfdMvsH8_n-2TmTlhi562ousWMfxUl4Jtr3uPK6oxQ/viewform" target="_blank"><button class="big-button">ORDER A COMMISSION</button></a>
       </div>
   );
 }
@@ -340,7 +345,7 @@ function Pricing(){
     <div>
   <table width="100%">
   <tr>
-    <th width="20%"><p className="pink left">Single Humanoid Character ($5-40+)</p></th>
+    <th width="20%"><h2 className="pink left">Single Humanoid Character ($5-40+)</h2></th>
       <th width="80%">
         <table width="100%" className="price-chart">
           <tr>
@@ -378,7 +383,7 @@ function Pricing(){
       </th>
   </tr>
   <tr>
-    <th width="20%"><p className="pink left">Spotify Screenshot Portraits ($26)</p></th>
+    <th width="20%"><h2 className="pink left">Spotify Screenshot Portraits ($26)</h2></th>
     <th width="80%">
       <p>Give me a character and a song they would vibe to and I will draw them. (Or give me a character and their vibes and I will pick a song for them to vibe to, if you're fine with a 90% chance of my assigning them a rock song.)</p>
       <ImageSmall source="images/spotify/loki.jpeg"></ImageSmall>
@@ -387,7 +392,7 @@ function Pricing(){
     </th>
   </tr>
   <tr>
-    <th width="20%"><p className="pink left">Backgrounds</p></th>
+    <th width="20%"><h2 className="pink left">Backgrounds</h2></th>
     <th width="80%">
       <p>Single-colored backgrounds come for free. Backgrounds can range from $3-$20+ depending on complexity.</p>
     </th>
@@ -402,7 +407,7 @@ function TOS(){
     <div>
       <table>
         <tr>
-          <th width="20%"><p className="pink left">Terms of Service</p></th>
+          <th width="20%"><h2 className="pink left">Terms of Service</h2></th>
           <th width="80%">
             <p>By commissioning me, you accept the following terms of service:</p>
             <p>1. Commissioned work is for personal (non-commercial) use only.</p>

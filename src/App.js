@@ -19,13 +19,13 @@ class App extends React.Component{
         <Router>
         <div className="sidebar">
 
-          <Link to="/"><h1>• CAROL DINH • </h1></Link>
+        <Link to="/"><img class="profile" src="images/titan-top.svg"></img></Link>
+          <Link to="/"><h1 id="title">✦ CAROL DINH ✦</h1></Link>
       
-            <Link className="navlink" to="/digital">Digital Art</Link>
-            <Link className="navlink" to="/painting">Painting</Link>
-            <Link className="navlink" to="/graphic-design">Graphic Design</Link>
+            <Link className="navlink" to="/art">Art</Link>
+            <Link className="navlink" to="/tech">Tech</Link>
+            <Link className="navlink" to="/design">Design</Link>
             <Link className="navlink" to="/writing">Writing</Link>
-            <Link className="navlink" to="/commissions">Commissions</Link>
             
 
             <Toggle></Toggle>
@@ -34,33 +34,28 @@ class App extends React.Component{
 
         <div className="gallery">
         <Switch> 
-          <Route path="/painting">
-            <h1>Painting</h1>
+          <Route path="/art">
+            <h1>Art & Illustration ✦</h1>
             <Painting />
           </Route>
-          <Route path="/digital">
-            <h1>Digital Art</h1>
-            <DigitalArt />
-          </Route>
-          <Route path="/graphic-design">
-            <h1>Graphic Design</h1>
+          <Route path="/design">
+            <h1>Graphic Design ✦</h1>
             <GraphicDesign />
           </Route>
-          <Route path="/media">
-            <h1>Digital Media</h1>
-            <h3>Web Development / Creative Coding / etc.</h3>
-            <Media/>
+          <Route path="/tech">
+            <h1>Code & Tech ✦</h1>
+            <Tech />
           </Route>
           <Route path="/commissions">
-            <h1>Commission me</h1>
+            <h1>Commission me ✦</h1>
             <Commissions />
           </Route>
           <Route path="/writing">
-            <h1>Writing</h1>
+            <h1>Writing ✦</h1>
             <Writing />
           </Route>
           <Route path="/design-notes">
-            <h1>Design Notes</h1>
+            <h1>Design Notes ✦</h1>
             <DesignNotes />
           </Route>
           <Route path="/pricing">
@@ -70,8 +65,11 @@ class App extends React.Component{
           <Route path="/links">
             <Links />
           </Route>
+          <Route path="/about">
+            <About />
+          </Route>
           <Route path="/">
-            <Home/>
+            <About/>
             
           </Route>
         </Switch>
@@ -79,7 +77,6 @@ class App extends React.Component{
         </Router>
 
         <img class="titan-bottom" src="images/titan-bottom.svg"></img>
-        <img class="titan-top" src="images/titan-top.svg"></img>
 
       </div>
     )
@@ -89,15 +86,30 @@ class App extends React.Component{
 function Home(){
   document.documentElement.setAttribute("planet-size", "large");
   return(
-  <div>
-      <h1>About me</h1>
-        <p>Hey there! My name is Carol. I make art.</p>
-        <p>I'm chiefly a <Link className="pink" to="/digital"><strong>digital artist,</strong></Link> though I have some experience with <Link className="pink" to="/painting"><strong>painting</strong></Link> and <Link className="pink" to="/graphic-design"><strong>graphic design.</strong></Link></p>
-        <p>Digital art and graphic design <Link className="pink" to="/commissions"><strong>commissions</strong></Link> are currently open.</p>
-        <p>I also <Link className="blue" to="/writing"><strong>write.</strong></Link> You can find some of my poetry and prose online.</p>
-        <p>Find me on <a href="https://instagram.com/cdinhart" target="_blank"><strong>Instagram</strong></a> and <a href="https://artfol.me/cdinhart" target="_blank"><strong>Artfol</strong></a> @cdinhart.</p>
+    <div class="about-me">
+      <h1>Features ✦</h1>
+      <p>✦ hihihih</p>
+      <p>✦ hihihih</p>
+      <p>✦ hihihih</p><br></br>
+      <Link className="blue" to="/about"><strong>About + Contact</strong></Link><br></br>
+      <Link className="pink" to="/design-notes"><strong>Design Notes</strong></Link>
+    </div>
+  );
+}
+
+function About(){
+  document.documentElement.setAttribute("planet-size", "large");
+  return(
+  <div class="about-me">
+      <h1>About me ✦</h1>
+        <p>Hey there! Call me Carol. I make things.</p>
+        <p>I grew up doodling and telling stories. Later on, I learned how to code. My creative practice is a chimera of them all. My dream is to create with technology and new mediums in a creative space.</p>
+        <p>I am pursuing a major in immersive media design. I study from Piscataway and Nacotchtank land.</p>
         <br></br>
-        <h1><Link to="/design-notes">Design Notes</Link></h1>
+        <a class="blue" href="https://www.instagram.com/cdinhart/" target="_blank"><strong>Instagram</strong></a><br></br>
+        <a class="blue" href="https://github.com/cyborg48" target="_blank"><strong>GitHub</strong></a><br></br>
+        <Link className="blue" to="/commissions"><strong>Commissions</strong></Link><br></br>
+        <Link className="pink" to="/design-notes"><strong>Design Notes</strong></Link>
   </div>
   );
 }
@@ -106,70 +118,6 @@ function Painting(){
   document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="painting">
-    <Image source="images/conditions.JPG" 
-      title="Pre-Existing Conditions"
-      description="Acrylic on canvas (18 x 24 in.). Featured in the Montpelier Artists on the Rise juried exhibition (2021)."
-      alt="A girl stands inside a city bus, with signs reading 'MAKS REQUIRED' and '6 FEET APART' taped to the windows. She wears a 
-      lime green down coat, a sky blue scarf, and brown pants with a brown messenger's bag over one shoulder. In one hand, she grips the bus pole; in the other, she grasps an Albuterol inhaler for asthma, her mask pulled slightly off her face as she prepares to take an inhalation."></Image>
-     <Image source="images/electricityandwater.jpg" title="Electricity & Water Don't Mix"
-      description="Painted with watercolor with touches of ink and oil pastel. This piece was submitted as part of my AP 
-      Studio Art: 2D Design portfolio and appeared in the first issue of The Agapanthus Collective <a href='https://www.agapanthuscollective.com/biannual-issue-1/' 
-      target='_blank'>here.</a>" alt="A girl stands with her back turned to the viewer, the desk before her split into two parts: on the left are art materials (canvases, sketchbooks, paints) and on the right are electronics tools and parts (circuits, soldering iron, toolbox, laptop)."></Image>
-    <Image source="images/girlsnight.jpg" title="Girls' Night"
-      description="Oil on canvas (24 x 18 in.). This piece appeared in the first issue of The Agapanthus Collective <a href='https://www.agapanthuscollective.com/biannual-issue-1/' target='_blank'>here.</a>" alt="Two girls sit inside a school at night, hackathonning; sleeping bags and backpacks and laptops out."></Image>
-    <Image source="images/gravity_glitch.JPG" title="Gravity Glitch"
-      description="Gouache on watercolor paper (9 x 12 in.). This piece was submitted as part of my AP Studio Art: 2D Design portfolio."
-      alt="A girl stands on a rock amidst river rapids; in the distance looming behind her is a large pink-purple mountain. The sky is vivid blue-green; she has red hair, a yellow raincoat, and an umbrella turned inside out from the wind."></Image>
-    <Image source="images/concert_mistress.JPG" title="Concert Mistress"
-      description="Oil on canvas board (12 x 15 in.). This piece was featured on the cover of The Wondrous Real magazine's <a href='https://www.wondrousrealmag.com/issue-2'target='_blank'>second issue.</a>" alt="A woman with red hair and a sea blue dress that matches her eyes grips a violin."></Image>
-    <Image source="images/careergirls.JPG" title="Career Girls"
-      description="Acrylic on canvas (24 x 18 in.). This piece was featured on the cover of Southchild Lit's first issue, <a href='https://southchildlit.wixsite.com/website-2'target='_blank'>GLITCH IN THE SYSTEM.</a>" alt="Three women—rather, the same woman three times—stand before different backdrops representing their day jobs: on the left, a kitchen; in the center, an early computer / large machine; on the right, a laundromat."></Image>
-    <Image source="images/chien_shiung_wu.jpeg" title="Chien-Shiung Wu"
-      description="Watercolor on watercolor paper (17 x 11 in.). This piece depicts Chinese American nuclear physicist Chien-Shiung Wu." alt="Chien-Shiung Wu stands on a ladder amidst heavy lab equipment. In the background is a chalkboard covered with equations."></Image>
-    <Image source="images/rialto.JPG" title="Two Paintngs of Venice" description="Two paintings of Venice. (1. RIALTO - acrylic on canvas (20 x 16 in.); 2. Gondolier - watercolor on watercolor paper)" alt="A gondolier rows a family in front of the Rialto bridge in Venice, Italy, as lights glitter in the water against the deep blue evening.">
-      <img className="expanded" src="images/venice.jpg" alt="A gondolier crosses a row of buildings in a Venetian canal."></img>
-    </Image>
-    <Image source="images/ops.jpg" title="Ops" description="Oil on canvas board (11 x 15 in.). Featured on the cover of Blue Marble Review's Summer 2021 issue. Check it out <a href='https://bluemarblereview.com/ops/' target='_blank'>here</a>." alt="Portrait of a woman in a space suit, white star designs circling her helmet like a planet's rings against a pink, purple, and gold background."></Image>
-
-  </div>
-  
-  );
-}
-
-function DigitalArt(){
-  document.documentElement.setAttribute("planet-size", "small");
-  return (
-    <div key="digitalart">
-      <Image source="images/swing.jpg" 
-      title="Swing"
-      description="Painted in Krita and featured in Paper Crane Journal's inaugural issue 
-          <a href='https://en.calameo.com/books/006629503d10b805aa97b' target='_blank'>here.</a>"
-      alt="Digitally-rendered painting. A young woman with tanned skin, dark brown hair, a green t-shirt, and maroon shorts stands on the seat of a swing, laughing to the side. In the background, her younger self stands trepidatiously in front of the same swing."/>
-      <Image source="images/roadtrip.jpg" title="Road Trip with Dreamers"
-        description="Painted in Krita featuring characters from my old novel work-in-progress and submitted as part of my 
-        AP Studio Art: 2D Design portfolio." alt="Two characters sit on the roof of a green car, parked at a scenic viewpoint before a waterfall."></Image>
-      <Image source="images/street.jpg" title="Untitled"
-        description="Sketched in HeavyPaint." alt="A bustling street filled with people, glowing buildings, and small shops."></Image>
-      <Image source="images/disillusionment1.jpg" title="Disillusionment"
-      description="Comic about the American Dream. Featured in <a href='https://www.ogmamagazine.com/' target='_blank'>ogma magazine</a> issue 07: culture.">
-        <img className="expanded" src="images/disillusionment2.jpg"></img>
-      </Image>
-      <Image source="images/no1.jpg" title="ROBOBITCH">
-        <img className="expanded" src="images/no2.jpg"></img>
-      </Image>
-      <Image source="images/frankenstein.jpg" title="FRANKENSTIEN: A New Musical Poster"
-        description="Mock poster design for Frankenstein: A New Musical, featuring William Frankenstein and The Creature."></Image>
-      <Image source="images/espiritus/hermanos.jpg" title="Personajes de La Casa de los Espíritus"
-        description="Sketches of the leading characters from Isabel Allende's 1982 novel <i>La Casa de los Espíritus</i> (<i>The House of the Spirits</i>)."
-        alt="Jaime and Nicolás Trueba. Jaime wears a doctor's uniform and stands on the left reading; Nicolás smokes, various amulets around his neck. Below them, the caption: 'LOS HERMANOS.'">
-          <img className="expanded" src="images/espiritus/clara.jpg"
-            alt="Clara del Valle holds two birds. The caption below her reads 'CLARA, CLARIVIDENTE.'"></img>
-          <img className="expanded" src="images/espiritus/amantes.jpg"
-            alt="Blanca Trueba and Pedro Tercero García stand with their arms around each other, both with serious expressions; Pedro holds a guitar. The caption below them reads 'LOS AMANTES."></img>
-          <img className="expanded" src="images/espiritus/alba.jpg"
-            alt="Young Alba Trueba, green hair in two plaits, stands holding a textbook from her Tío Jaime and a jar of paintbrushes. Below her, the caption: 'LA NIÑA ALBA.'"></img>
-      </Image>
-
       <Image source="images/spotify/vi.jpeg" title="Spotify Screenshot Portraits" description="A fun idea I had to characterize portraits. If you are interested, commission a custom one for $26 <a href='/commissions' target='_blank'>here</a>." alt="A girl in a yellow sweater and scarf stands holding blank canvases before a Spotify screenshot of Meredith Brook's 'Bitch.' A lyric below her reads 'I'm a sinner, I'm a saint / and I do not feel ashamed.'">
         <img className="expanded" src="images/spotify/lulu.jpeg"
           alt="My friend stands in front of a Spotify screenshot of The Daily podcast."
@@ -182,9 +130,51 @@ function DigitalArt(){
         </img>
       </Image>
 
-      <Image source="images/maze.jpg" title="ARIADNE" description="Painted in HeavyPaint. Featured on the cover of <i>the winnow magazine's</i> 'DREAMSCAPES' issue. Check it out <a href='https://www.thewinnowmagazine.com/summer-2021.html' target='_blank'>here</a>."
-        alt="A girl stands before a magenta-tinted labyrinth, back facing the viewer, purple string trailing behind her."></Image>
-    </div>
+      <Image source="images/espiritus/hermanos.jpg" title="Personajes: La Casa de los Espíritus"
+        description="Sketches of the leading characters from Isabel Allende's 1982 novel <i>La Casa de los Espíritus</i> (<i>The House of the Spirits</i>)."
+        alt="Jaime and Nicolás Trueba. Jaime wears a doctor's uniform and stands on the left reading; Nicolás smokes, various amulets around his neck. Below them, the caption: 'LOS HERMANOS.'">
+          <img className="expanded" src="images/espiritus/clara.jpg"
+            alt="Clara del Valle holds two birds. The caption below her reads 'CLARA, CLARIVIDENTE.'"></img>
+          <img className="expanded" src="images/espiritus/amantes.jpg"
+            alt="Blanca Trueba and Pedro Tercero García stand with their arms around each other, both with serious expressions; Pedro holds a guitar. The caption below them reads 'LOS AMANTES."></img>
+          <img className="expanded" src="images/espiritus/alba.jpg"
+            alt="Young Alba Trueba, green hair in two plaits, stands holding a textbook from her Tío Jaime and a jar of paintbrushes. Below her, the caption: 'LA NIÑA ALBA.'"></img>
+      </Image>
+     <Image title="Significant Figures (portfolio)" source="images/significant_figures/electricityandwater.jpg" alt="A girl stands with her back turned to the viewer, the desk before her split into two parts: on the left are art materials (canvases, sketchbooks, paints) and on the right are electronics tools and parts (circuits, soldering iron, toolbox, laptop).">
+       
+        <img className="expanded" src="images/significant_figures/careergirls.JPG" alt="Three women—rather, the same woman three times—stand before different backdrops representing their day jobs: on the left, a kitchen; in the center, an early computer / large machine; on the right, a laundromat."></img> 
+        <img className="expanded" src="images/significant_figures/chien_shiung_wu.jpeg" alt="Chien-Shiung Wu stands on a ladder amidst heavy lab equipment. In the background is a chalkboard covered with equations."></img>
+        <img className="expanded" src="images/significant_figures/girlsnight.jpg" alt="Two girls sit inside a school at night, hackathonning; sleeping bags and backpacks and laptops out."></img>
+        <p>
+        <b>Significant Figures (2020)</b>
+        </p>
+        <p>A portfolio of fine art expressing the experiences and histories of women in STEM. <i>Significant Figures</i> centers around the intersection between femininity and science, especially male-dominated disciplines like physics, engineering, and technology. These paintings are the products of both fascination and frustration, the wonder and wistfulness that comes with existing in a culture that rounds away your presence.
+        </p>
+        <p>In order of appearance:</p>
+        <p><b>Electricity and Water Don't Mix</b> (Watercolor and oil pastel on watercolor paper)</p>
+        <p><b>Career Girl</b> (Acrylic on canvas)</p>
+        <p><b>First Lady of Physics</b> (Watercolor on watercolor paper)</p>
+        <p><b>Girs' Night</b> (Oil on canvas)</p>
+      </Image>
+<Image source="images/disillusionment1.jpg" title="Disillusionment"
+      description="Comic about the American Dream. Featured in <a href='https://www.ogmamagazine.com/' target='_blank'>ogma magazine</a> issue 07: culture.">
+        <img className="expanded" src="images/disillusionment2.jpg"></img>
+        <p><b>Disillusionment</b></p>
+      </Image>
+    <Image source="images/gravity_glitch.JPG" title="Gravity Glitch"
+      alt="A girl stands on a rock amidst river rapids; in the distance looming behind her is a large pink-purple mountain. The sky is vivid blue-green; she has red hair, a yellow raincoat, and an umbrella turned inside out from the wind.">
+        <p><b>Gravity Glitch</b> (Gouache on watercolor paper)</p>
+      </Image>
+    
+    <Image source="images/rialto.JPG" title="Two Paintings of Venice" alt="A gondolier rows a family in front of the Rialto bridge in Venice, Italy, as lights glitter in the water against the deep blue evening.">
+      <p><b>Rialto</b> (20 x 16, acrylic on canvas)</p>
+      <img className="expanded" src="images/venice.jpg" alt="A gondolier crosses a row of buildings in a Venetian canal."></img>
+      <p><b>Gondola</b> (watercolor on watercolor paper)</p>
+      
+    </Image>
+
+  </div>
+  
   );
 }
 
@@ -192,32 +182,51 @@ function GraphicDesign(){
   document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="design">
-      <Image source="images/backslash_brand_kit.jpg"
-      description="Graphics and branding kit for <a href='https://backslashlit.com/' target='_blank'>Backslash Lit</a>.">
+      <Image source="images/fortherecord/poster2-cmyk.jpg" title="For The Record">
+        <p>Poster for my augmented reality installation / collage "For The Record" (2021) Learn more about this project under the "Tech" section of my portfolio.</p>
       </Image>
-       <Image source="images/umd_transparent.svg"
-       description="Entry for UMD '25 discord server logo contest."></Image>
-       <Image source="images/dcc_design_poster.jpg">
+      <Image source="images/backslash/backslash_brand_kit.jpg" title="Backslash Lit Graphics">
+        <p>Graphics and branding kit for <a href='https://backslashlit.com/' target='_blank'>Backslash Lit</a> (2021)</p>
       </Image>
+       <Image source="images/umd_transparent.svg" title="UMD '25 Discord Icon (Concept)">
+         <p>Vector graphic submitted to the unofficial UMD '25 Discord Server logo contest (2021)</p>
+       </Image>
     </div>
   );
 }
 
-function Media(){
+function Tech(){
   document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="media"> 
+
+      <Image title="For The Record: An AR Installation" source="images/fortherecord/screenshot1.jpg">
+        <img className="expanded" src="images/fortherecord/screenshot2.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot3.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot4.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot5.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot6.jpg"></img>
+        <img className="expanded" src="images/fortherecord/poster2-cmyk.jpg"></img>
+        <p><b>For The Record: </b>an augmented reality installation (2021)</p>
+        <p>"For The Record" explores the relationship between your camera app and present experience. How does documentation impact your ability to "enjoy the moment?" How is your brain shaped by the tools you hold? Hold the AR app up to the poster to access the experience.</p>
+        <p>Built in Unity. Poster designed in Photoshop. Click <a href="https://www.instagram.com/p/CXuBLScFE2K/" target="_blank">here</a> for a video demo.</p>
+      </Image>
       
-      <Image source="images/charonexpress.jpg"
-      description="Interactive inspiration board for my novel built with HTML/CSS/JS. Visit <a href='https://charonexpress.web.app/' target='_blank'>here</a>."></Image>
-      <Image source="images/blog.jpg"
-      description="Personal blog slash shouting void slash coding exercise. Built with Jekyll and HTML/CSS/JS. Visit <a href='https://cyblog48.web.app/' target='_blank'>here</a>."></Image>
-      <Image source="images/hatch.jpg" description="p5.js sketch."></Image>
-      <Image source="images/titan.jpg"
-      description="Web dev demo. Built with HTML/CSS."></Image>
-      <Image source="images/thao.jpg"
-      description="Thao & the Get Down Stay Down Lyric bot. Built using Python with Tweepy and Genius API. Visit <a href='https://twitter.com/thaolyricbot' target='_blank'>here</a>. Listen to Thao's music 
-      <a href='https://open.spotify.com/artist/2dn0CGCWvtrwZ66bOeLNb2?si=UtU8lPTDRVay0TDFx5r11Q' target='_blank'>here</a>."></Image>
+      <Image title="Archie" source="images/archie/archie.jpg" >
+        <img className="expanded" src="images/archie/archie2.jpg"></img>
+        <img className="expanded" src="images/archie/archie3.jpg"></img>
+        <img className="expanded" src="images/archie/archie4.jpg"></img>
+        <p><b>Archie</b> (2021)</p>
+        <p>A Discord bot to archive inactive channels, built with Discord.py and deployed on Heroku. <a href='https://top.gg/bot/857027766976118806' target='_blank'>Add Archie to your Discord server.</a></p>
+        <p></p>
+      </Image>
+
+      <Image title="Picnic" source="images/picnic/screenshot1.jpg">
+      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/2vUomGoD-gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        <p><b>Picnic</b> (2020)</p>
+        <p>A critique app for developing artists. Frameworks used: Django, Bootstrap</p>
+      </Image>
+
     </div>
   );
 }
@@ -262,10 +271,10 @@ function Writing(){
 function DesignNotes(){
   document.documentElement.setAttribute("planet-size", "large");
   return(
-    <div>
-      <p>Site built in React & deployed with Firebase Hosting. Headings set in Fuzzy Bubbles; subheadings and body set in Raleway.</p>
+    <div class="about-me">
+      <p>Site built in React & deployed with Firebase Hosting. Headings set in Fuzzy Bubbles; subheadings and body set in Mulish.</p>
       
-      <p>Theme icons made by <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p>
+      <p>Theme icons made by <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p><br></br>
 
       <p class="small">This site has a carbon footprint, as all digital activity does. The below estimate counts only this page ("DESIGN NOTES"): the true carbon footprint will be larger because images require more processing power to load. My including this estimate here is not to deter you from web browsing but rather to raise awareness—click on the badge to learn more about your digital carbon footprint.</p>
       
@@ -435,6 +444,7 @@ function Designs(){
 }
 
 function Links(){
+  document.documentElement.setAttribute("planet-size", "large");
   return(
     <div>
       <a href="https://cdinhart.gumroad.com/l/popculturewiki" target="_blank"><button class="big-button">POETRY BOOK</button></a>
@@ -475,12 +485,11 @@ class Image extends React.Component{
   render(){
     if(this.state.size != "image-wide"){
       return (
-        <div className={this.state.size} onClick={this.enlarge} ref={this.myRef}>
-          <Suspense fallback={ <img className="cover fadeIn" src=''></img>}>
-             <img className="cover" src={this.props.source} 
-             alt={this.props.alt} loading="lazy"></img>
-          </Suspense>
-        </div>
+          <div className={this.state.size} onClick={this.enlarge} ref={this.myRef}>
+              <img className="cover" src={this.props.source} 
+              alt={this.props.alt} loading="lazy"></img>
+              <div className="gallery-title">{this.props.title}</div>
+          </div>
       );
     } else{
       return (
@@ -488,7 +497,6 @@ class Image extends React.Component{
             <a id="currentImage"></a>
             <img className="expanded" src={this.props.source} loading="lazy" alt={this.props.alt}></img>
             {this.props.children}
-            <p className="img-title">{this.props.title}</p>
             <p className="img-description" dangerouslySetInnerHTML={this.setDescription()}></p>
             <div className="close" onClick={this.close}>x</div>
             <div className="center" ref={this.myRef}></div>

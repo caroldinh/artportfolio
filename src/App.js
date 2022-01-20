@@ -20,7 +20,7 @@ class App extends React.Component{
         <div className="sidebar">
 
         <Link to="/"><img class="profile" src="images/titan-top.svg"></img></Link>
-          <Link to="/"><h1 id="title">✦ CAROL DINH ✦</h1></Link>
+          <Link to="/"><h1 id="title">CAROL DINH ✦</h1></Link>
       
             <Link className="navlink" to="/art">Art</Link>
             <Link className="navlink" to="/tech">Tech</Link>
@@ -35,32 +35,28 @@ class App extends React.Component{
         <div className="gallery">
         <Switch> 
           <Route path="/art">
-            <h1>Art & Illustration ✦</h1>
+            <h1>ART & ILLUSTRATION ✦</h1>
             <Painting />
           </Route>
           <Route path="/design">
-            <h1>Graphic Design ✦</h1>
+            <h1>GRAPHIC DESIGN ✦</h1>
             <GraphicDesign />
           </Route>
           <Route path="/tech">
-            <h1>Code & Tech ✦</h1>
+            <h1>CODE & TECH ✦</h1>
             <Tech />
           </Route>
           <Route path="/commissions">
-            <h1>Commission me ✦</h1>
+            <h1>COMMISSION ME ✦</h1>
             <Commissions />
           </Route>
           <Route path="/writing">
-            <h1>Writing ✦</h1>
+            <h1>WRITING ✦</h1>
             <Writing />
           </Route>
           <Route path="/design-notes">
-            <h1>Design Notes ✦</h1>
+            <h1>DESIGN NOTES ✦</h1>
             <DesignNotes />
-          </Route>
-          <Route path="/pricing">
-            <h1>Pricing</h1>
-            <Pricing />
           </Route>
           <Route path="/links">
             <Links />
@@ -69,14 +65,12 @@ class App extends React.Component{
             <About />
           </Route>
           <Route path="/">
-            <About/>
+            <Home/>
             
           </Route>
         </Switch>
         </div>
         </Router>
-
-        <img class="titan-bottom" src="images/titan-bottom.svg"></img>
 
       </div>
     )
@@ -87,12 +81,13 @@ function Home(){
   document.documentElement.setAttribute("planet-size", "large");
   return(
     <div class="about-me">
-      <h1>Features ✦</h1>
-      <p>✦ hihihih</p>
-      <p>✦ hihihih</p>
-      <p>✦ hihihih</p><br></br>
-      <Link className="blue" to="/about"><strong>About + Contact</strong></Link><br></br>
-      <Link className="pink" to="/design-notes"><strong>Design Notes</strong></Link>
+      <h1>FEATURES ✦</h1>
+      <p>✦ <Link to="/tech">For The Record:</Link> An AR Collage investigating the culture of documentation.</p>
+      <p>✦ <a href="https://cdinhart.gumroad.com/l/popculturewiki" target="_blank">The All-Devouring Pop Culture Wiki:</a> A micro-chapbook of poems about pop culture and growing up.</p>
+      <p>✦ <a href="backslashlit.com/" target="_blank">Backslash Lit:</a> a webzine and learning community for electronic literature.</p>
+      <br></br>
+      <Link className="cool" to="/about"><strong>About + Contact</strong></Link><br></br>
+      <Link className="warm" to="/design-notes"><strong>Design Notes</strong></Link>
     </div>
   );
 }
@@ -101,15 +96,14 @@ function About(){
   document.documentElement.setAttribute("planet-size", "large");
   return(
   <div class="about-me">
-      <h1>About me ✦</h1>
-        <p>Hey there! Call me Carol. I make things.</p>
-        <p>I grew up doodling and telling stories. Later on, I learned how to code. My creative practice is a chimera of them all. My dream is to create with technology and new mediums in a creative space.</p>
-        <p>I am pursuing a major in immersive media design. I study from Piscataway and Nacotchtank land.</p>
+      <h1>ABOUT ME ✦</h1>
+        <p>Hey there! Call me Carol. I am an Immersive Media Design student attending the University of Maryland. I reside on Piscataway and Nacotchtank land.</p>
         <br></br>
-        <a class="blue" href="https://www.instagram.com/cdinhart/" target="_blank"><strong>Instagram</strong></a><br></br>
-        <a class="blue" href="https://github.com/cyborg48" target="_blank"><strong>GitHub</strong></a><br></br>
-        <Link className="blue" to="/commissions"><strong>Commissions</strong></Link><br></br>
-        <Link className="pink" to="/design-notes"><strong>Design Notes</strong></Link>
+        <Link className="cool" to="/"><strong>Home</strong></Link><br></br>
+        <a class="cool" href="https://www.instagram.com/cdinhart/" target="_blank"><strong>Instagram</strong></a><br></br>
+        <a class="cool" href="https://github.com/cyborg48" target="_blank"><strong>GitHub</strong></a><br></br>
+        <Link className="cool" to="/commissions"><strong>Commissions</strong></Link><br></br>
+        <Link className="warm" to="/design-notes"><strong>Design Notes</strong></Link>
   </div>
   );
 }
@@ -118,27 +112,9 @@ function Painting(){
   document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="painting">
-      <Image source="images/spotify/vi.jpeg" title="Spotify Screenshot Portraits" description="A fun idea I had to characterize portraits. If you are interested, commission a custom one for $26 <a href='/commissions' target='_blank'>here</a>." alt="A girl in a yellow sweater and scarf stands holding blank canvases before a Spotify screenshot of Meredith Brook's 'Bitch.' A lyric below her reads 'I'm a sinner, I'm a saint / and I do not feel ashamed.'">
-        <img className="expanded" src="images/spotify/lulu.jpeg"
-          alt="My friend stands in front of a Spotify screenshot of The Daily podcast."
-        ></img>
-        <img className="expanded" src="images/spotify/thor.jpeg"
-          alt="MCU's Thor in modern clothing stands before a Spotify screenshot of Queen's 'Hammer to Fall.' A lyric below him reads 'Now your struggle's all in vain, yeah / For we who grew up tall and proud.'"
-        ></img>
-        <img className="expanded" src="images/spotify/loki.jpeg"
-          alt="MCU's Loki in modern clothing stands before a Spotify screenshot of Queen's 'Princes of the Universe.' A lyric below him reads 'I am immortal / I have inside me blood of kings.'">
-        </img>
-      </Image>
-
-      <Image source="images/espiritus/hermanos.jpg" title="Personajes: La Casa de los Espíritus"
-        description="Sketches of the leading characters from Isabel Allende's 1982 novel <i>La Casa de los Espíritus</i> (<i>The House of the Spirits</i>)."
-        alt="Jaime and Nicolás Trueba. Jaime wears a doctor's uniform and stands on the left reading; Nicolás smokes, various amulets around his neck. Below them, the caption: 'LOS HERMANOS.'">
-          <img className="expanded" src="images/espiritus/clara.jpg"
-            alt="Clara del Valle holds two birds. The caption below her reads 'CLARA, CLARIVIDENTE.'"></img>
-          <img className="expanded" src="images/espiritus/amantes.jpg"
-            alt="Blanca Trueba and Pedro Tercero García stand with their arms around each other, both with serious expressions; Pedro holds a guitar. The caption below them reads 'LOS AMANTES."></img>
-          <img className="expanded" src="images/espiritus/alba.jpg"
-            alt="Young Alba Trueba, green hair in two plaits, stands holding a textbook from her Tío Jaime and a jar of paintbrushes. Below her, the caption: 'LA NIÑA ALBA.'"></img>
+      <Image title="ESCAPE" source="images/escapism.jpg" alt="A vibrant illustration. At the center, a woman immersed in a VR headset. To her left, images of polluted waters, forest fires, factory smoke, a graph with data trending to the extreme. To her right, neon and vibrant colors; two rocket-ships entering the sky leaving behind pink clouds of fantastical smoke.">
+        <p><b>ESCAPE</b></p>
+        <p>Inspired by the vibrant style of modern editorial illustration. I created this piece to process my thoughts on the emerging concept of the 'metaverse' and what I want to do with my studies of immersive media.</p>
       </Image>
      <Image title="Significant Figures (portfolio)" source="images/significant_figures/electricityandwater.jpg" alt="A girl stands with her back turned to the viewer, the desk before her split into two parts: on the left are art materials (canvases, sketchbooks, paints) and on the right are electronics tools and parts (circuits, soldering iron, toolbox, laptop).">
        
@@ -156,13 +132,13 @@ function Painting(){
         <p><b>First Lady of Physics</b> (Watercolor on watercolor paper)</p>
         <p><b>Girs' Night</b> (Oil on canvas)</p>
       </Image>
-<Image source="images/disillusionment1.jpg" title="Disillusionment"
-      description="Comic about the American Dream. Featured in <a href='https://www.ogmamagazine.com/' target='_blank'>ogma magazine</a> issue 07: culture.">
-        <img className="expanded" src="images/disillusionment2.jpg"></img>
+      <Image source="images/disillusionment1.jpg" title="Disillusionment"
+      description="Comic about the American Dream. Featured in <a href='https://www.ogmamagazine.com/' target='_blank'>ogma magazine</a> issue 07: culture." columns="2">
+        <img className="expanded split-column" src="images/disillusionment2.jpg"></img>
         <p><b>Disillusionment</b></p>
       </Image>
     <Image source="images/gravity_glitch.JPG" title="Gravity Glitch"
-      alt="A girl stands on a rock amidst river rapids; in the distance looming behind her is a large pink-purple mountain. The sky is vivid blue-green; she has red hair, a yellow raincoat, and an umbrella turned inside out from the wind.">
+      alt="A girl stands on a rock amidst river rapids; in the distance looming behind her is a large pink-purple mountain. The sky is vivid blue-green; she has red hair, a yellow raincoat, and an umbrella turned inside out from the wind." columns="2">
         <p><b>Gravity Glitch</b> (Gouache on watercolor paper)</p>
       </Image>
     
@@ -173,6 +149,30 @@ function Painting(){
       
     </Image>
 
+
+    <Image source="images/spotify/vi.jpeg" title="Spotify Screenshot Portraits" description="A fun idea I had to characterize portraits. If you are interested, commission a custom one for $30 <a href='/commissions' target='_blank'>here</a>." alt="A girl in a yellow sweater and scarf stands holding blank canvases before a Spotify screenshot of Meredith Brook's 'Bitch.' A lyric below her reads 'I'm a sinner, I'm a saint / and I do not feel ashamed.'" columns="2">
+        <img className="expanded split-column" src="images/spotify/lulu.jpeg"
+          alt="My friend stands in front of a Spotify screenshot of The Daily podcast."
+        ></img>
+        <img className="expanded split-column" src="images/spotify/thor.jpeg"
+          alt="MCU's Thor in modern clothing stands before a Spotify screenshot of Queen's 'Hammer to Fall.' A lyric below him reads 'Now your struggle's all in vain, yeah / For we who grew up tall and proud.'"
+        ></img>
+        <img className="expanded split-column" src="images/spotify/loki.jpeg"
+          alt="MCU's Loki in modern clothing stands before a Spotify screenshot of Queen's 'Princes of the Universe.' A lyric below him reads 'I am immortal / I have inside me blood of kings.'">
+        </img>
+      </Image>
+
+      <Image source="images/espiritus/hermanos.jpg" title="Personajes: La Casa de los Espíritus"
+        description="Sketches of the leading characters from Isabel Allende's 1982 novel <i>La Casa de los Espíritus</i> (<i>The House of the Spirits</i>)."
+        alt="Jaime and Nicolás Trueba. Jaime wears a doctor's uniform and stands on the left reading; Nicolás smokes, various amulets around his neck. Below them, the caption: 'LOS HERMANOS.'" columns="2">
+          <img className="expanded split-column" src="images/espiritus/clara.jpg"
+            alt="Clara del Valle holds two birds. The caption below her reads 'CLARA, CLARIVIDENTE.'"></img>
+          <img className="expanded split-column" src="images/espiritus/amantes.jpg"
+            alt="Blanca Trueba and Pedro Tercero García stand with their arms around each other, both with serious expressions; Pedro holds a guitar. The caption below them reads 'LOS AMANTES."></img>
+          <img className="expanded split-column" src="images/espiritus/alba.jpg"
+            alt="Young Alba Trueba, green hair in two plaits, stands holding a textbook from her Tío Jaime and a jar of paintbrushes. Below her, the caption: 'LA NIÑA ALBA.'"></img>
+      </Image>
+
   </div>
   
   );
@@ -182,15 +182,12 @@ function GraphicDesign(){
   document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="design">
-      <Image source="images/fortherecord/poster2-cmyk.jpg" title="For The Record">
+      <Image source="images/fortherecord/poster2-cmyk.jpg" title="For The Record" alt="A poster with a concert photo in the top right corner, audience filled with recording phones. Below the concert photo, the text 'FOR THE RECORD.' On the left side of the poster, two QR codes (one for Android, one for iOS). Beneath the barcodes, text reading: 'AN AR INVESTIGATION. WHY MUST WE TAPE / TAG / TEXT / STREAM / SHARE / SELFIE / STATUS UPDATE / SNAPSHOT / SAVE / DOCUMENT EVERY MOMENT?'">
         <p>Poster for my augmented reality installation / collage "For The Record" (2021) Learn more about this project under the "Tech" section of my portfolio.</p>
       </Image>
       <Image source="images/backslash/backslash_brand_kit.jpg" title="Backslash Lit Graphics">
         <p>Graphics and branding kit for <a href='https://backslashlit.com/' target='_blank'>Backslash Lit</a> (2021)</p>
       </Image>
-       <Image source="images/umd_transparent.svg" title="UMD '25 Discord Icon (Concept)">
-         <p>Vector graphic submitted to the unofficial UMD '25 Discord Server logo contest (2021)</p>
-       </Image>
     </div>
   );
 }
@@ -199,20 +196,21 @@ function Tech(){
   document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="media"> 
-
-      <Image title="For The Record: An AR Installation" source="images/fortherecord/screenshot1.jpg">
-        <img className="expanded" src="images/fortherecord/screenshot2.jpg"></img>
-        <img className="expanded" src="images/fortherecord/screenshot3.jpg"></img>
-        <img className="expanded" src="images/fortherecord/screenshot4.jpg"></img>
-        <img className="expanded" src="images/fortherecord/screenshot5.jpg"></img>
-        <img className="expanded" src="images/fortherecord/screenshot6.jpg"></img>
-        <img className="expanded" src="images/fortherecord/poster2-cmyk.jpg"></img>
-        <p><b>For The Record: </b>an augmented reality installation (2021)</p>
-        <p>"For The Record" explores the relationship between your camera app and present experience. How does documentation impact your ability to "enjoy the moment?" How is your brain shaped by the tools you hold? Hold the AR app up to the poster to access the experience.</p>
-        <p>Built in Unity. Poster designed in Photoshop. Click <a href="https://www.instagram.com/p/CXuBLScFE2K/" target="_blank">here</a> for a video demo.</p>
+      <ForTheRecord></ForTheRecord>
+      <Image title="Jitter (Processing)" source="images/generative/jitter2.jpg" columns="2">
+        <img className="expanded split-column" src="images/generative/jitter4.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter5.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter6.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter7.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter8.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter9.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter10.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter11.jpg"></img>
+        <img className="expanded split-column" src="images/generative/jitter12.jpg"></img>
+        <p><b>Jitter (2022)</b></p>
+        <p>A series of generative art pieces created in Processing.</p>
       </Image>
-      
-      <Image title="Archie" source="images/archie/archie.jpg" >
+      <Image title="Archie (Discord.py)" source="images/archie/archie.jpg" >
         <img className="expanded" src="images/archie/archie2.jpg"></img>
         <img className="expanded" src="images/archie/archie3.jpg"></img>
         <img className="expanded" src="images/archie/archie4.jpg"></img>
@@ -221,14 +219,37 @@ function Tech(){
         <p></p>
       </Image>
 
-      <Image title="Picnic" source="images/picnic/screenshot1.jpg">
-      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/2vUomGoD-gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+      <Image title="Backslash Lit website (Jekyll)" source="images/backslash/issues.jpg">
+        <img className="expanded" src="images/backslash/i4.jpg"></img>
+        <img className="expanded" src="images/backslash/i5.jpg"></img>
+        <img className="expanded" src="images/backslash/home.jpg"></img>
+        <p>I developed and maintained the website for my digital zine, <a href="https://backslashlit.com" target="_blank">Backslash Lit</a>, with Jekyll and GitHub pages and implemented experimental issue layouts using p5.js.</p>
+      </Image>
+
+      <Image title="Picnic (Django)" source="images/picnic/screenshot1.jpg">
+      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/2vUomGoD-gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
         <p><b>Picnic</b> (2020)</p>
-        <p>A critique app for developing artists. Frameworks used: Django, Bootstrap</p>
+        <p>A critique app for developing artists.</p>
       </Image>
 
     </div>
   );
+}
+
+function ForTheRecord(){
+  return(
+    <Image title="For The Record (Unity)" source="images/fortherecord/screenshot1.jpg">
+        <img className="expanded" src="images/fortherecord/screenshot2.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot3.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot4.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot5.jpg"></img>
+        <img className="expanded" src="images/fortherecord/screenshot6.jpg"></img>
+        <img className="expanded" src="images/fortherecord/poster2-cmyk.jpg"></img>
+        <p><b>For The Record: </b>an augmented reality collage (2021)</p>
+        <p>"For The Record" explores the relationship between your camera app and present experience. How does documentation impact your ability to "enjoy the moment?" How is your brain shaped by the tools you hold? Hold the AR app up to the poster to access the experience.</p>
+        <p>Built in Unity. Poster designed in Photoshop. Click <a href="https://www.instagram.com/p/CXuBLScFE2K/" target="_blank">here</a> for a video demo.</p>
+      </Image>
+  )
 }
 
 function Writing(){
@@ -236,7 +257,7 @@ function Writing(){
   return(
       <table width="100%">
         <tr>
-          <th width="20%"><h2 className="pink">Prose</h2></th>
+          <th width="20%"><h2 className="warm">Prose</h2></th>
           <th width="80%">
             <Pub link="https://flashpointsf.com/2021/04/09/deploy/" title="DEPLOY" press="Flash Point SF"></Pub>
             <Pub link="https://www.ampleremains.com/01ctdinh.html" title="Doppelgänger" press="Ample Remains"></Pub>
@@ -246,8 +267,9 @@ function Writing(){
         </tr>
         
         <tr>
-          <th width="20%"><h2 className="pink">Poetry</h2></th>
+          <th width="20%"><h2 className="warm">Poetry</h2></th>
             <th width="80%">
+              <Pub link="https://petrichormag.com/18-c-t-dinh/" title="C(0de) to Bisexuality" press="petrichor journal"></Pub>
               <Pub link="https://journaloferato.squarespace.com/issue-two" title="ROCK YOU / Champions" press="journal of erato"></Pub>
               <Pub link="https://issuu.com/paracosmliteraryjournal/docs/issue_01_metamorphosis__4_" title="In There / Alter Egos / Superpower" press="Paracosm Lit"></Pub>
               <Pub link="images/writing/quantum_entanglement.jpg" title="Quantum Entanglement"></Pub>
@@ -259,7 +281,7 @@ function Writing(){
         </tr>
 
         <tr>
-          <th width="20%"><h2 className="pink">Books</h2></th>
+          <th width="20%"><h2 className="warm">Books</h2></th>
             <th width="80%">
               <Pub link="https://cdinhart.gumroad.com/l/popculturewiki" title="The All-Devouring Pop Culture Wiki" press="2021"></Pub>
             </th>
@@ -272,7 +294,7 @@ function DesignNotes(){
   document.documentElement.setAttribute("planet-size", "large");
   return(
     <div class="about-me">
-      <p>Site built in React & deployed with Firebase Hosting. Headings set in Fuzzy Bubbles; subheadings and body set in Mulish.</p>
+      <p>Site built in React & deployed with Firebase Hosting. Headings set in Oswald; subheadings and body set in Mulish.</p>
       
       <p>Theme icons made by <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p><br></br>
 
@@ -306,21 +328,21 @@ function Commissions(){
     <div>
     <table width="100%">
         <tr>
-          <th width="20%"><h2 className="pink left">What I Do</h2></th>
+          <th width="20%"><h2 className="warm left">What I Do</h2></th>
           <th width="80%">
-            <p>Characters, friends, family, pets, fanart, etc.—I'd be down to tackle most things as long as you give me enough info and provide references as necessary.</p>
+            <p>Characters, friends, family, pets, fanart, etc.—I'd be down to tackle most things as long as you give me enough info and provide references as necessary. I am willing to draw complex armor and mecha with references & potential increase from base price.</p>
           </th>
         </tr>
 
         <tr>
-          <th width="20%"><h2 className="pink left">What I Don't Do</h2></th>
+          <th width="20%"><h2 className="warm left">What I Don't Do</h2></th>
           <th width="80%">
-            <p> NSFW, bigoted requests, problematic pairings, anything that makes me uncomfortable. I have the right to ignore and/or turn down commissions at my discretion.</p>
+            <p>No NSFW, bigotry, or sketchy ships! I have the right to ignore and/or turn down commissions at my discretion.</p>
           </th>
         </tr>
         
         <tr>
-          <th width="20%"><h2 className="pink left">How It Works</h2></th>
+          <th width="20%"><h2 className="warm left">How It Works</h2></th>
             <th width="80%">
               <p>1. <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSdSty2FrfdMvsH8_n-2TmTlhi562ousWMfxUl4Jtr3uPK6oxQ/viewform" target="_blank">Fill out my commission order form (preferred)</a></strong> or DM me on social media with the commission details. The form should take between 5-10 minutes to complete depending on the complexity of the project; 2-3 minutes if you have reference photos.</p>
               <p>2. I will reach out to you within a week so we can discuss the commission further.</p>
@@ -330,7 +352,7 @@ function Commissions(){
         </tr>
 
         <tr>
-          <th width="20%"><h2 className="pink left">Payment</h2></th>
+          <th width="20%"><h2 className="warm left">Payment</h2></th>
             <th width="80%">
               <p>I take payments in PayPal. For a detailed overview of pricing, click <Link to="/pricing">here.</Link> All prices are in USD.</p>
             </th>
@@ -354,7 +376,7 @@ function Pricing(){
     <div>
   <table width="100%">
   <tr>
-    <th width="20%"><h2 className="pink left">Single Humanoid Character ($5-40+)</h2></th>
+    <th width="20%"><h2 className="warm left">Single Humanoid Character ($5-40+)</h2></th>
       <th width="80%">
         <table width="100%" className="price-chart">
           <tr>
@@ -365,47 +387,56 @@ function Pricing(){
           </tr>
           <tr>
             <th width="50%"><p>Line Art</p></th>
-            <th width="15%"><p>$5</p></th>
-            <th width="15%"><p>$8</p></th>
-            <th width="15%"><p>$10</p></th>
+            <th width="15%"><p>$6</p></th>
+            <th width="15%"><p>$9</p></th>
+            <th width="15%"><p>$12</p></th>
           </tr>
           <tr>
             <th width="50%"><p>Flat Color</p></th>
-            <th width="15%"><p>$10</p></th>
-            <th width="15%"><p>$15</p></th>
-            <th width="15%"><p>$20</p></th>
+            <th width="15%"><p>$12</p></th>
+            <th width="15%"><p>$16</p></th>
+            <th width="15%"><p>$24</p></th>
           </tr>
           <tr>
             <th width="50%"><p>Full Render</p></th>
-            <th width="15%"><p>$15</p></th>
-            <th width="15%"><p>$22</p></th>
-            <th width="15%"><p>$30</p></th>
+            <th width="15%"><p>$16</p></th>
+            <th width="15%"><p>$26</p></th>
+            <th width="15%"><p>$36</p></th>
           </tr>
           <tr>
             <th width="50%" className="lastrow"><p>Other Styles</p></th>
             <th colspan="3" className="lastrow"><p>Please contact me!</p></th>
           </tr>
         </table>
+        <p>Above are base prices per character. If your composition includes multiple characters, the pricing will be +75% base price per additional character.</p>
+        <p>Prices may change based on complexity.</p>
         <ImageSmall source="images/commissions/erica.jpg"></ImageSmall>
         <ImageSmall source="images/commissions/aapi.jpg"></ImageSmall>
         <ImageSmall source="images/raya.jpg"></ImageSmall>
       </th>
   </tr>
   <tr>
-    <th width="20%"><h2 className="pink left">Spotify Screenshot Portraits ($26)</h2></th>
+    <th width="20%"><h2 className="warm left">Spotify Screenshot Portraits ($30)</h2></th>
     <th width="80%">
-      <p>Give me a character and a song they would vibe to and I will draw them. (Or give me a character and their vibes and I will pick a song for them to vibe to, if you're fine with a 90% chance of my assigning them a rock song.)</p>
+      <p>Give me a character and a song they would vibe to and I will draw them. (If you'd like me to pick a song for your character, that's an additional $2—it takes time to go through my playlists and choose!)</p>
       <ImageSmall source="images/spotify/loki.jpeg"></ImageSmall>
       <ImageSmall source="images/spotify/lulu.jpeg"></ImageSmall>
       <ImageSmall source="images/spotify/vi.jpeg"></ImageSmall>
     </th>
   </tr>
   <tr>
-    <th width="20%"><h2 className="pink left">Backgrounds</h2></th>
+    <th width="20%"><h2 className="warm left">Backgrounds</h2></th>
     <th width="80%">
-      <p>Single-colored backgrounds come for free. Backgrounds can range from $3-$20+ depending on complexity.</p>
+      <p>Single-colored backgrounds come for free. For more complex backgrounds, my rate is $16/hr.</p>
     </th>
   </tr>
+  <tr>
+    <th width="20%"><h2 className="warm left">Designs, Collages, Misc.</h2></th>
+    <th width="80%">
+      <p>Pitch me your idea and we'll see what I can do! My rate is $16/hr.</p>
+    </th>
+  </tr>
+  
 </table>
 </div>
   );
@@ -416,31 +447,18 @@ function TOS(){
     <div>
       <table>
         <tr>
-          <th width="20%"><h2 className="pink left">Terms of Service</h2></th>
+          <th width="20%"><h2 className="warm left">Terms of Service</h2></th>
           <th width="80%">
             <p>By commissioning me, you accept the following terms of service:</p>
-            <p>1. Commissioned work is for personal (non-commercial) use only.</p>
-            <p>2. I reserve the right to turn down any commission.</p>
-            <p>3. I retain all rights to my artwork.</p>
-            <p>4. I am free to post, share, and/or add your commissioned work to my portfolio unless otherwise requested.</p>
-            <p>5. You must credit me (cdinhart) where my art is displayed. Do not steal, trace, or claim my work as your own.</p>
+            <p>1. I reserve the right to turn down any commission.</p>
+            <p>2. I retain all rights to my artwork.</p>
+            <p>3. I am free to post, share, and/or add your commissioned work to my portfolio unless otherwise requested.</p>
+            <p>4. You must credit me (cdinhart) where my art is displayed. Do not steal, trace, or claim my work as your own.</p>
           </th>
         </tr>
       </table>
     </div>
   );
-}
-
-function Designs(){
-  <tr>
-  <th width="20%"><p className="pink left">Logos / Designs ($15+)</p></th>
-  <th width="80%">
-    <p>Logos start at $15 and may vary depending on complexity. You will receive the logo in PNG format and a color palette with hex codes for reference.</p>
-    <ImageSmall source="images/backslash.svg"></ImageSmall>
-     <ImageSmall source="images/umd_transparent.svg"></ImageSmall>
-     <ImageSmall source="images/html1.jpg"></ImageSmall>
-  </th>
-</tr>
 }
 
 function Links(){
@@ -458,7 +476,11 @@ class Image extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = { size: "image" };
+    let cols = "expanded";
+    if(this.props.columns){
+      cols="expanded split-column"
+    }
+    this.state = { size: "image", class:cols };
     this.enlarge = this.enlarge.bind(this);
     this.close = this.close.bind(this);
     this.setDescription = this.setDescription.bind(this);
@@ -495,7 +517,7 @@ class Image extends React.Component{
       return (
           <div className={this.state.size} onClick={this.handleClick}>
             <a id="currentImage"></a>
-            <img className="expanded" src={this.props.source} loading="lazy" alt={this.props.alt}></img>
+            <img className={this.state.class} src={this.props.source} loading="lazy" alt={this.props.alt}></img>
             {this.props.children}
             <p className="img-description" dangerouslySetInnerHTML={this.setDescription()}></p>
             <div className="close" onClick={this.close}>x</div>

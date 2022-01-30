@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Suspense } from 'react';
+import {Helmet} from 'react-helmet';
 import Carbonbadge from "react-carbonbadge"
 import {
   BrowserRouter as Router,
@@ -16,6 +17,13 @@ class App extends React.Component{
   render(){
     return(
       <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>PORTFOLIO</title>
+          <meta name="description"
+                content="Hi there! Call me Carol. I am an artist, writer, and creative coder studying immersive media design. Welcome to my creative portfolio!"
+          />
+        </Helmet>
         <Router>
         <div className="sidebar">
 
@@ -23,8 +31,8 @@ class App extends React.Component{
           <Link to="/"><h1 id="title">CAROL DINH ✦</h1></Link>
       
             <Link className="navlink" to="/art">Art</Link>
-            <Link className="navlink" to="/tech">Tech</Link>
             <Link className="navlink" to="/design">Design</Link>
+            <Link className="navlink" to="/multimedia">Multimedia</Link>
             <Link className="navlink" to="/writing">Writing</Link>
             
 
@@ -42,9 +50,9 @@ class App extends React.Component{
             <h1>GRAPHIC DESIGN ✦</h1>
             <GraphicDesign />
           </Route>
-          <Route path="/tech">
-            <h1>CODE & TECH ✦</h1>
-            <Tech />
+          <Route path="/multimedia">
+            <h1>MULTIMEDIA ✦</h1>
+            <Multimedia />
           </Route>
           <Route path="/commissions">
             <h1>COMMISSION ME ✦</h1>
@@ -82,11 +90,11 @@ function Home(){
   return(
     <div class="about-me">
       <h1>FEATURES ✦</h1>
-      <p>✦ <Link to="/tech">For The Record:</Link> An AR Collage investigating the culture of documentation.</p>
-      <p>✦ <a href="https://cdinhart.gumroad.com/l/popculturewiki" target="_blank">The All-Devouring Pop Culture Wiki:</a> A micro-chapbook of poems about pop culture and growing up.</p>
-      <p>✦ <a href="backslashlit.com/" target="_blank">Backslash Lit:</a> a webzine and learning community for electronic literature.</p>
+      <p>✦ <a href="https://www.instagram.com/p/CXuBLScFE2K/?utm_source=ig_web_copy_link" target="_blank"><strong>For The Record:</strong></a> An AR collage investigating the culture of documentation.</p>
+      <p>✦ <a href="https://cdinhart.gumroad.com/l/popculturewiki" target="_blank"><strong>The All-Devouring Pop Culture Wiki:</strong></a> 15 poems about TVTropes, identity, superheroes, girls in movies, nostalgic rock anthems, and growing up on screens.</p>
       <br></br>
       <Link className="cool" to="/about"><strong>About + Contact</strong></Link><br></br>
+      <Link className="cool" to="/commissions"><strong>Commissions</strong></Link><br></br>
       <Link className="warm" to="/design-notes"><strong>Design Notes</strong></Link>
     </div>
   );
@@ -97,12 +105,12 @@ function About(){
   return(
   <div class="about-me">
       <h1>ABOUT ME ✦</h1>
-        <p>Hey there! Call me Carol. I am an Immersive Media Design student attending the University of Maryland. I reside on Piscataway and Nacotchtank land.</p>
+        <p>Hey there! Call me Carol. I am an artist, writer, and creative coder studying immersive media design. I reside in and study from Piscataway and Nacotchtank land.</p>
+
+        <p>Welcome to my creative portfolio!</p>
         <br></br>
         <Link className="cool" to="/"><strong>Home</strong></Link><br></br>
         <a class="cool" href="https://www.instagram.com/cdinhart/" target="_blank"><strong>Instagram</strong></a><br></br>
-        <a class="cool" href="https://github.com/cyborg48" target="_blank"><strong>GitHub</strong></a><br></br>
-        <Link className="cool" to="/commissions"><strong>Commissions</strong></Link><br></br>
         <Link className="warm" to="/design-notes"><strong>Design Notes</strong></Link>
   </div>
   );
@@ -185,19 +193,26 @@ function GraphicDesign(){
       <Image source="images/fortherecord/poster2-cmyk.jpg" title="For The Record" alt="A poster with a concert photo in the top right corner, audience filled with recording phones. Below the concert photo, the text 'FOR THE RECORD.' On the left side of the poster, two QR codes (one for Android, one for iOS). Beneath the barcodes, text reading: 'AN AR INVESTIGATION. WHY MUST WE TAPE / TAG / TEXT / STREAM / SHARE / SELFIE / STATUS UPDATE / SNAPSHOT / SAVE / DOCUMENT EVERY MOMENT?'">
         <p>Poster for my augmented reality installation / collage "For The Record" (2021) Learn more about this project under the "Tech" section of my portfolio.</p>
       </Image>
-      <Image source="images/backslash/backslash_brand_kit.jpg" title="Backslash Lit Graphics">
+      <Image source="images/backslash/backslash_brand_kit.jpg" title="Backslash Lit">
         <p>Graphics and branding kit for <a href='https://backslashlit.com/' target='_blank'>Backslash Lit</a> (2021)</p>
+      </Image>
+      <Image source="images/reinvented/changemakers.jpg" title="Reinvented Magazine">
+        <img className="expanded split-column" src="images/reinvented/card1.jpg"></img>
+        <img className="expanded split-column" src="images/reinvented/card2.jpg"></img>
+        <img className="expanded" src="images/reinvented/postcard.jpg"></img>
+        <img className="expanded split-column" src="images/reinvented/reinventathon_fullcolor.png"></img>
+        <img className="expanded split-column" src="images/reinvented/reinventathon_singlecolor.png"></img>
+        <p>Graphics and spreads designed as part of <a href="https://www.reinventedmagazine.com/" target="_blank">Reinvented Magazine's</a> creative team.</p>
       </Image>
     </div>
   );
 }
 
-function Tech(){
+function Multimedia(){
   document.documentElement.setAttribute("planet-size", "small");
   return(
     <div key="media"> 
-      <ForTheRecord></ForTheRecord>
-      <Image title="Jitter (Processing)" source="images/generative/jitter2.jpg" columns="2">
+      <Image title="Jitter (Generative art series)" source="images/generative/jitter2.jpg" columns="2">
         <img className="expanded split-column" src="images/generative/jitter4.jpg"></img>
         <img className="expanded split-column" src="images/generative/jitter5.jpg"></img>
         <img className="expanded split-column" src="images/generative/jitter6.jpg"></img>
@@ -210,35 +225,8 @@ function Tech(){
         <p><b>Jitter (2022)</b></p>
         <p>A series of generative art pieces created in Processing.</p>
       </Image>
-      <Image title="Archie (Discord.py)" source="images/archie/archie.jpg" >
-        <img className="expanded" src="images/archie/archie2.jpg"></img>
-        <img className="expanded" src="images/archie/archie3.jpg"></img>
-        <img className="expanded" src="images/archie/archie4.jpg"></img>
-        <p><b>Archie</b> (2021)</p>
-        <p>A Discord bot to archive inactive channels, built with Discord.py and deployed on Heroku. <a href='https://top.gg/bot/857027766976118806' target='_blank'>Add Archie to your Discord server.</a></p>
-        <p></p>
-      </Image>
 
-      <Image title="Backslash Lit website (Jekyll)" source="images/backslash/issues.jpg">
-        <img className="expanded" src="images/backslash/i4.jpg"></img>
-        <img className="expanded" src="images/backslash/i5.jpg"></img>
-        <img className="expanded" src="images/backslash/home.jpg"></img>
-        <p>I developed and maintained the website for my digital zine, <a href="https://backslashlit.com" target="_blank">Backslash Lit</a>, with Jekyll and GitHub pages and implemented experimental issue layouts using p5.js.</p>
-      </Image>
-
-      <Image title="Picnic (Django)" source="images/picnic/screenshot1.jpg">
-      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/2vUomGoD-gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-        <p><b>Picnic</b> (2020)</p>
-        <p>A critique app for developing artists.</p>
-      </Image>
-
-    </div>
-  );
-}
-
-function ForTheRecord(){
-  return(
-    <Image title="For The Record (Unity)" source="images/fortherecord/screenshot1.jpg">
+      <Image title="For The Record: An AR Collage" source="images/fortherecord/screenshot1.jpg">
         <img className="expanded" src="images/fortherecord/screenshot2.jpg"></img>
         <img className="expanded" src="images/fortherecord/screenshot3.jpg"></img>
         <img className="expanded" src="images/fortherecord/screenshot4.jpg"></img>
@@ -249,7 +237,16 @@ function ForTheRecord(){
         <p>"For The Record" explores the relationship between your camera app and present experience. How does documentation impact your ability to "enjoy the moment?" How is your brain shaped by the tools you hold? Hold the AR app up to the poster to access the experience.</p>
         <p>Built in Unity. Poster designed in Photoshop. Click <a href="https://www.instagram.com/p/CXuBLScFE2K/" target="_blank">here</a> for a video demo.</p>
       </Image>
-  )
+
+      <Image title="Backslash Lit website" source="images/backslash/issues.jpg">
+        <img className="expanded" src="images/backslash/i4.jpg"></img>
+        <img className="expanded" src="images/backslash/i5.jpg"></img>
+        <img className="expanded" src="images/backslash/home.jpg"></img>
+        <p>I designed the website for my digital zine, <a href="https://backslashlit.com" target="_blank">Backslash Lit</a>, and implemented experimental issue layouts using p5.js.</p>
+      </Image>
+
+    </div>
+  );
 }
 
 function Writing(){
@@ -296,7 +293,9 @@ function DesignNotes(){
     <div class="about-me">
       <p>Site built in React & deployed with Firebase Hosting. Headings set in Oswald; subheadings and body set in Mulish.</p>
       
-      <p>Theme icons made by <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></p><br></br>
+      <p>Theme icons made by <a href="https://www.flaticon.com/authors/good-ware" target="_blank" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>.</p>
+
+      <p>Site icon is based on an image of Saturn's moon Titan (from NASA) and designed by me!</p><br></br>
 
       <p class="small">This site has a carbon footprint, as all digital activity does. The below estimate counts only this page ("DESIGN NOTES"): the true carbon footprint will be larger because images require more processing power to load. My including this estimate here is not to deter you from web browsing but rather to raise awareness—click on the badge to learn more about your digital carbon footprint.</p>
       
@@ -520,7 +519,7 @@ class Image extends React.Component{
             <img className={this.state.class} src={this.props.source} loading="lazy" alt={this.props.alt}></img>
             {this.props.children}
             <p className="img-description" dangerouslySetInnerHTML={this.setDescription()}></p>
-            <div className="close" onClick={this.close}>x</div>
+            <img src="images/X.svg" className="close" onClick={this.close}></img>
             <div className="center" ref={this.myRef}></div>
         </div>
       );
@@ -606,6 +605,20 @@ function Archive(){
   return(
     <div>
       <Pub link="images/writing/social_cues.jpg" title="social cues" press="Gaithersburg Book Festival"></Pub>
+      <Image title="Picnic (Django)" source="images/picnic/screenshot1.jpg">
+      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/2vUomGoD-gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        <p><b>Picnic</b> (2020)</p>
+        <p>A critique app for developing artists.</p>
+      </Image>
+
+      <Image title="Archie (Discord.py)" source="images/archie/archie.jpg" >
+        <img className="expanded" src="images/archie/archie2.jpg"></img>
+        <img className="expanded" src="images/archie/archie3.jpg"></img>
+        <img className="expanded" src="images/archie/archie4.jpg"></img>
+        <p><b>Archie</b> (2021)</p>
+        <p>A Discord bot to archive inactive channels, built with Discord.py and deployed on Heroku. <a href='https://top.gg/bot/857027766976118806' target='_blank'>Add Archie to your Discord server.</a></p>
+        <p></p>
+      </Image>
     </div>
   );
 }

@@ -132,12 +132,19 @@ h2{
   margin-left:30%;
   display:inline-table;
   width: 70%;
+  max-width: 70%;
+  overflow-x: hidden;
   text-align: justify !important;
 }
 
 th{
   font-weight: normal;
   vertical-align: top;
+}
+
+table{
+  max-width: 70vw;
+  overflow-x: hidden;
 }
 
 .cover{
@@ -207,6 +214,10 @@ th{
   margin-right: 1vw;
 }
 
+.imagesmall-wide{
+  max-width: 100% !important;
+}
+
 .split-column{
   width: 25vw !important;
   margin-right: 1vw !important;
@@ -259,7 +270,7 @@ a:hover{
   text-decoration: underline;
 }
 
-.image-wide .close{
+.close{
   position: absolute;
   top: 20px;
   right: 25px;

@@ -6,6 +6,7 @@ function Home(){
   return(
     <div class="about-me">
       <h1>FEATURES ✦</h1>
+      <p>✦ <a href="https://contralto.herokuapp.com/" target="_blank"><strong>Contralto: </strong></a> A Flask app analyzing the gender diversity of your Spotify playlists.</p>
       <p>✦ <a href="https://www.instagram.com/p/CXuBLScFE2K/?utm_source=ig_web_copy_link" target="_blank"><strong>For The Record:</strong></a> An AR collage investigating the culture of documentation.</p>
       <p>✦ <a href="https://cdinhart.gumroad.com/l/popculturewiki" target="_blank"><strong>The All-Devouring Pop Culture Wiki:</strong></a> 15 poems about TVTropes, identity, superheroes, girls in movies, nostalgic rock anthems, and growing up on screens.</p>
       <br></br>

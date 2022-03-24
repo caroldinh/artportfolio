@@ -6,8 +6,11 @@ function Multimedia(){
   return(
     <div key="media"> 
       <Image title="Contralto (Flask)" source="images/contralto.jpg">
-        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/U8oWKvA5aHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
-        <p>Development in progress: A web app to estimate the gender-diversity of a Spotify playlist and generate artist recommendations. Built with Flask, MySQL, and Spotify API.</p>
+        <img className="expanded" src="images/contralto/1.jpg"></img>
+        <img className="expanded" src="images/contralto/2.jpg"></img>
+        <img className="expanded" src="images/contralto/4.jpg"></img>
+        <p>A web app to estimate the gender-diversity of a Spotify playlist and generate artist recommendations. Built with Flask, MySQL, and Spotify API.</p>
+        <p><a href="https://contralto.herokuapp.com/" target="_blank">Try it out!</a></p>
       </Image>
       <Image title="Jitter (Processing)" source="images/generative/jitter2.jpg" columns="2">
         <img className="expanded split-column" src="images/generative/jitter4.jpg"></img>
@@ -44,10 +47,11 @@ function Multimedia(){
         <p></p>
       </Image>
 
-      <Image title="Backslash Lit (Jekyll, p5.js)" source="images/backslash/issues.jpg">
-        <img className="expanded" src="images/backslash/i4.jpg"></img>
+      <Image title="Backslash Lit (Jekyll, p5.js)" source="images/backslash/i6.jpg">
         <img className="expanded" src="images/backslash/i5.jpg"></img>
+        <img className="expanded" src="images/backslash/i4.jpg"></img>
         <img className="expanded" src="images/backslash/home.jpg"></img>
+        <img className="expanded" src="images/backslash/issues.jpg"></img>
         <p>I designed the website for my digital zine, <a href="https://backslashlit.com" target="_blank">Backslash Lit</a>, and implemented experimental issue layouts using p5.js.</p>
       </Image>
 
